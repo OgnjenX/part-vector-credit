@@ -1,0 +1,22 @@
+{
+  "experiment": "EXP002",
+  "protocol_version": "frozen_v1",
+  "frozen_date": "2026-08-22",
+  "development_commit": "d431107",
+  "confirmatory_seeds": [
+    2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009,
+    2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019,
+    2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029
+  ],
+  "output_path": "results/exp002/frozen_v1",
+  "protocol_sha256": "a2b89d27d4c5db411969bc77effee6273b128c4f99529a7ed5884eb846df23e2",
+  "source_sha256_before_protocol_status_change": {
+    "environment.py": "a79d5f08ca79d81ec2a8f48b4b49ac159d44b59eba81bcc1ad66b40af987f261",
+    "model.py": "e3a50f450bfa1c347f4e1aa59ed39fa7d8c358ca617fcef31c09dcf508c4a3d6",
+    "analysis.py": "16e01bad5e4df7845d941a8192936fa25c54881d1a21fcd749bef088b18bea43",
+    "experiment.py": "2d45f7a1e85a39612b4e7ca00349be3e707e561e07041f3ce75a7170057ed631",
+    "cli.py": "c09989784a26417315a68cc519379ee3e2678e42d693ab2dd173424483a14b16",
+    "pyproject.toml": "37daab3bf297de020ad8e7bb40821bedbb02e4041f1e354e7b3bb99add256dac"
+  },
+  "guard": "Run exactly once; do not overwrite output; do not tune after inspection."
+}

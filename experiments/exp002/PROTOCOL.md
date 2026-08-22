@@ -1,8 +1,8 @@
 # EXP002 preregistration: learned top-down expectancy
 
-Status at creation: **development draft; confirmatory execution is software-blocked until
-`FROZEN_PROTOCOL.json` is committed.** EXP001's `frozen_v1` data at commit `9f6807c` are
-historical inputs only and will not be rerun or modified.
+Status: **frozen on 2026-08-22 after development commit `d431107`.** Confirmatory execution is
+software-blocked unless `FROZEN_PROTOCOL.json` is present. EXP001's `frozen_v1` data at commit
+`9f6807c` are historical inputs only and will not be rerun or modified.
 
 ## Question and claim boundary
 
