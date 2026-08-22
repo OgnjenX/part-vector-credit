@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [{name = "OgnjenX"}]
-dependencies = ["numpy>=1.26", "matplotlib>=3.8"]
+dependencies = ["numpy>=1.26", "matplotlib>=3.8", "brian2>=2.8"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "ruff>=0.6"]
@@ -19,6 +19,7 @@ dev = ["pytest>=8", "ruff>=0.6"]
 part-credit = "part_credit.cli:main"
 part-credit-exp001 = "part_credit.exp001.cli:main"
 part-credit-exp002 = "part_credit.exp002.cli:main"
+part-credit-exp003a = "part_credit.exp003a.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

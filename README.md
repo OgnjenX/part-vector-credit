@@ -43,7 +43,10 @@ qualitative sign opposition without supplying neuron-wise errors.
 - [EXP003 theory audit](experiments/exp003/THEORY_AUDIT.md) asks the stronger causal question:
   can a learned expectation regulate SMART-derived local plasticity so early dendritic state
   predicts later synaptic and somatic change? The audit found a real SMART mechanism but also a
-  cross-system limitation. No EXP003 code or simulation exists at this checkpoint.
+  cross-system limitation. That audit remains an unchanged historical checkpoint.
+- [EXP003a](experiments/exp003a/RESULTS.md) independently validates a minimal Brian2 motif before
+  any pART, reward, or BCI integration. Its [theory mapping](experiments/exp003a/THEORY_MAPPING.md)
+  gives the exact SMART Eq. 5/6 reduction and its limitations.
 
 ## Main finding
 
@@ -73,6 +76,20 @@ Suppressing top-down learning removed the pattern but changed behavior by exactl
 [EXP002 conclusion](experiments/exp002/CONCLUSION.md) and
 [frozen statistical analysis](experiments/exp002/STATISTICAL_ANALYSIS.md).
 
+## EXP003a finding
+
+EXP003a is **Outcome A—validated at the level of the SMART-derived reduced motif**. A supplied
+top-down match modulated a lower cell without spiking by itself, changed its later feedforward
+spike timing, drove the local Eq. 5/6 update from 0.600 to 0.731, and changed a learning-off
+feedforward-only probe from 0 to 7 spikes out of 8. The matched competitor, top-down-ablated,
+and mismatch cells had zero update; shuffling the top-down center transferred the effect to the
+other neuron. The update function receives only local weight and pre/post spike histories—no
+top-down vector, reward, error, or hidden causal role.
+
+This is not a full SMART validation. It uses LIF cells and a normalized post-spike proxy for
+SMART's raw-voltage gate, and it supplies rather than learns the expectation and mismatch. It
+validates only the local arrow needed for a future EXP003b. EXP003b has not been started.
+
 ## Run EXP000
 
 ```bash
@@ -96,6 +113,17 @@ development protocol is frozen in git.
 ```bash
 uv sync --extra dev
 uv run part-credit-exp002 --phase development --output results/exp002/development_v1
+```
+
+## Run EXP003a
+
+EXP003a uses Brian2 in the same uv-managed project environment. The command refuses to overwrite
+an existing output directory.
+
+```bash
+uv sync --extra dev
+uv run part-credit-exp003a --output results/exp003a/development_v4
+uv run pytest tests/test_exp003a_smart_motif.py
 ```
 
 EXP000 outputs are written to `results/initial_experiment.json` and `.png`. EXP001
