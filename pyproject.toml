@@ -18,6 +18,7 @@ dev = ["pytest>=8", "ruff>=0.6"]
 [project.scripts]
 part-credit = "part_credit.cli:main"
 part-credit-exp001 = "part_credit.exp001.cli:main"
+part-credit-exp002 = "part_credit.exp002.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

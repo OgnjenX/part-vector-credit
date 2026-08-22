@@ -35,6 +35,11 @@ qualitative sign opposition without supplying neuron-wise errors.
   primary Grossberg source and marks unsupported engineering choices.
 - [EXP001 results](experiments/exp001/RESULTS.md) and [conclusion](experiments/exp001/CONCLUSION.md)
   report the development failures, held-out test, and theory-level interpretation.
+- [EXP002 protocol](experiments/exp002/PROTOCOL.md) tests whether an independently initialized,
+  Grossberg outstar-derived top-down expectancy can learn cell-specific structure after scalar
+  reinforcement selects a distributed causal hypothesis. Its [theory mapping](experiments/exp002/THEORY_MAPPING.md)
+  distinguishes Grossberg-derived principles from cross-system extrapolations and engineering
+  baselines.
 
 ## Main finding
 
@@ -65,6 +70,16 @@ uv run part-credit --seeds 30 --trials 1200
 ```bash
 uv run part-credit-exp001 --phase development
 uv run part-credit-exp001 --phase confirmatory
+```
+
+## Run EXP002
+
+EXP002 uses the repository's uv environment. Confirmation is intentionally blocked until the
+development protocol is frozen in git.
+
+```bash
+uv sync --extra dev
+uv run part-credit-exp002 --phase development --output results/exp002/development_v1
 ```
 
 EXP000 outputs are written to `results/initial_experiment.json` and `.png`. EXP001

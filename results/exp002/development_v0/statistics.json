@@ -1,0 +1,310 @@
+{
+  "frozen_no_learning": {
+    "pre_remap_evaluation_success": {
+      "paired_mean_difference": 0.0,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "post_remap_evaluation_success": {
+      "paired_mean_difference": 0.0,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "pre_remap_topdown_alignment": {
+      "paired_mean_difference": 0.266585169600708,
+      "paired_bootstrap_ci95": [
+        0.18741214877319143,
+        0.34133128658755507
+      ]
+    },
+    "post_remap_topdown_alignment": {
+      "paired_mean_difference": 0.3149896085712325,
+      "paired_bootstrap_ci95": [
+        0.24207900172433705,
+        0.39358446685714565
+      ]
+    },
+    "pre_longitudinal_prediction": {
+      "paired_mean_difference": -0.1435062203208603,
+      "paired_bootstrap_ci95": [
+        -0.38951117218996506,
+        0.091776152262747
+      ]
+    },
+    "post_longitudinal_prediction": {
+      "paired_mean_difference": 0.1856142616887259,
+      "paired_bootstrap_ci95": [
+        -0.05246621669264645,
+        0.43941575641173647
+      ]
+    }
+  },
+  "random_controller": {
+    "pre_remap_evaluation_success": {
+      "paired_mean_difference": 0.0,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "post_remap_evaluation_success": {
+      "paired_mean_difference": 0.0,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "pre_remap_topdown_alignment": {
+      "paired_mean_difference": 0.28388812945267405,
+      "paired_bootstrap_ci95": [
+        0.23092165598472425,
+        0.34309850830564087
+      ]
+    },
+    "post_remap_topdown_alignment": {
+      "paired_mean_difference": 0.32047677900326915,
+      "paired_bootstrap_ci95": [
+        0.2647361648186342,
+        0.38022949255811894
+      ]
+    },
+    "pre_longitudinal_prediction": {
+      "paired_mean_difference": -0.23053212117117503,
+      "paired_bootstrap_ci95": [
+        -0.4431336021444819,
+        -0.019762474832682723
+      ]
+    },
+    "post_longitudinal_prediction": {
+      "paired_mean_difference": 0.0870180377249954,
+      "paired_bootstrap_ci95": [
+        -0.16528949227137774,
+        0.3226689657618069
+      ]
+    }
+  },
+  "contextual_bandit": {
+    "pre_remap_evaluation_success": {
+      "paired_mean_difference": 0.0,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "post_remap_evaluation_success": {
+      "paired_mean_difference": 0.0,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "pre_remap_topdown_alignment": {
+      "paired_mean_difference": 0.28388812945267405,
+      "paired_bootstrap_ci95": [
+        0.2294519866443205,
+        0.34588441149826044
+      ]
+    },
+    "post_remap_topdown_alignment": {
+      "paired_mean_difference": 0.32047677900326915,
+      "paired_bootstrap_ci95": [
+        0.26617440912470025,
+        0.3786665825732656
+      ]
+    },
+    "pre_longitudinal_prediction": {
+      "paired_mean_difference": -0.15608584058634473,
+      "paired_bootstrap_ci95": [
+        -0.4156251831796927,
+        0.1046380595281867
+      ]
+    },
+    "post_longitudinal_prediction": {
+      "paired_mean_difference": 0.11637963534768153,
+      "paired_bootstrap_ci95": [
+        -0.07636034838781774,
+        0.30900654015932894
+      ]
+    }
+  },
+  "bandit_selected_pattern_copy": {
+    "pre_remap_evaluation_success": {
+      "paired_mean_difference": 0.0,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "post_remap_evaluation_success": {
+      "paired_mean_difference": 0.0,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "pre_remap_topdown_alignment": {
+      "paired_mean_difference": 0.0008941827990846078,
+      "paired_bootstrap_ci95": [
+        -0.009301630576530493,
+        0.011948667984199733
+      ]
+    },
+    "post_remap_topdown_alignment": {
+      "paired_mean_difference": -0.005178104622547648,
+      "paired_bootstrap_ci95": [
+        -0.01639765323107581,
+        0.0056778710880922255
+      ]
+    },
+    "pre_longitudinal_prediction": {
+      "paired_mean_difference": -0.10599371595354441,
+      "paired_bootstrap_ci95": [
+        -0.3240590776427748,
+        0.10702147819203377
+      ]
+    },
+    "post_longitudinal_prediction": {
+      "paired_mean_difference": -0.08701986349555746,
+      "paired_bootstrap_ci95": [
+        -0.26658401566271717,
+        0.13040096282076635
+      ]
+    }
+  },
+  "part_selection_no_expectancy": {
+    "pre_remap_evaluation_success": {
+      "paired_mean_difference": 0.0,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "post_remap_evaluation_success": {
+      "paired_mean_difference": 0.0,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "pre_remap_topdown_alignment": {
+      "paired_mean_difference": 0.28388812945267405,
+      "paired_bootstrap_ci95": [
+        0.22961418089628532,
+        0.3454418611191214
+      ]
+    },
+    "post_remap_topdown_alignment": {
+      "paired_mean_difference": 0.32047677900326915,
+      "paired_bootstrap_ci95": [
+        0.26491942847671207,
+        0.3832072675039001
+      ]
+    },
+    "pre_longitudinal_prediction": {
+      "paired_mean_difference": -0.15608584058634473,
+      "paired_bootstrap_ci95": [
+        -0.4028286370592102,
+        0.10116360078855055
+      ]
+    },
+    "post_longitudinal_prediction": {
+      "paired_mean_difference": 0.11637963534768153,
+      "paired_bootstrap_ci95": [
+        -0.07449927641571909,
+        0.32009412040758467
+      ]
+    }
+  },
+  "primary_apical_learning_suppressed": {
+    "pre_remap_evaluation_success": {
+      "paired_mean_difference": 0.0,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "post_remap_evaluation_success": {
+      "paired_mean_difference": 0.0,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "pre_remap_topdown_alignment": {
+      "paired_mean_difference": 0.2989857501645353,
+      "paired_bootstrap_ci95": [
+        0.1653831905593533,
+        0.44939313852602736
+      ]
+    },
+    "post_remap_topdown_alignment": {
+      "paired_mean_difference": 0.43526258427695663,
+      "paired_bootstrap_ci95": [
+        0.36152891849832175,
+        0.5122690795567643
+      ]
+    },
+    "pre_longitudinal_prediction": {
+      "paired_mean_difference": -0.22572520612522232,
+      "paired_bootstrap_ci95": [
+        -0.47903582365483754,
+        0.04481641125375874
+      ]
+    },
+    "post_longitudinal_prediction": {
+      "paired_mean_difference": 0.26698260108840544,
+      "paired_bootstrap_ci95": [
+        0.05109497258050779,
+        0.5041006928577505
+      ]
+    }
+  },
+  "explicit_vector_error_positive_control": {
+    "pre_remap_evaluation_success": {
+      "paired_mean_difference": -1.0,
+      "paired_bootstrap_ci95": [
+        -1.0,
+        -1.0
+      ]
+    },
+    "post_remap_evaluation_success": {
+      "paired_mean_difference": -1.0,
+      "paired_bootstrap_ci95": [
+        -1.0,
+        -1.0
+      ]
+    },
+    "pre_remap_topdown_alignment": {
+      "paired_mean_difference": -0.7161118705441515,
+      "paired_bootstrap_ci95": [
+        -0.7703650589760752,
+        -0.6541155884981029
+      ]
+    },
+    "post_remap_topdown_alignment": {
+      "paired_mean_difference": -0.6795232209926267,
+      "paired_bootstrap_ci95": [
+        -0.733402466036377,
+        -0.6206750046938839
+      ]
+    },
+    "pre_longitudinal_prediction": {
+      "paired_mean_difference": 0.10022825262433581,
+      "paired_bootstrap_ci95": [
+        -0.18324607190855147,
+        0.4004531494175557
+      ]
+    },
+    "post_longitudinal_prediction": {
+      "paired_mean_difference": 0.3345057175871322,
+      "paired_bootstrap_ci95": [
+        -0.012634477538857616,
+        0.6479725245583521
+      ]
+    }
+  }
+}
