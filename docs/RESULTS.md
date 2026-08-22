@@ -1,8 +1,7 @@
-# Results log
+# EXP000 results log (preserved)
 
-This file is updated from the committed confirmatory run. Machine-readable seed
-data and the figure are generated locally by `part-credit` and intentionally not
-tracked, so results can be regenerated rather than treated as opaque artifacts.
+This file records EXP000. Its machine-readable seed data and figure are committed.
+EXP001 has a separate append-only result record under `experiments/exp001/`.
 
 ## Run 0: failed calibration (retained as a failure)
 

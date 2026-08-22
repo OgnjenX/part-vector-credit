@@ -1,4 +1,4 @@
-# Model card: what is Grossberg-derived and what is engineered
+# EXP000 model card: what is Grossberg-derived and what is engineered
 
 ## Mechanisms represented
 

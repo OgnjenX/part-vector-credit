@@ -17,6 +17,7 @@ dev = ["pytest>=8", "ruff>=0.6"]
 
 [project.scripts]
 part-credit = "part_credit.cli:main"
+part-credit-exp001 = "part_credit.exp001.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -28,4 +29,3 @@ addopts = "-q"
 [tool.ruff]
 line-length = 100
 target-version = "py310"
-

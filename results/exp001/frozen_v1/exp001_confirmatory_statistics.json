@@ -1,0 +1,72 @@
+{
+  "method": "10,000 seed-level nonparametric bootstrap draws; deterministic seed 20260822",
+  "full": {
+    "pre_remap_late_success": {
+      "mean": 0.7280555555555555,
+      "bootstrap_95_low": 0.6474930555555555,
+      "bootstrap_95_high": 0.7924999999999999
+    },
+    "post_remap_late_success": {
+      "mean": 0.7158333333333334,
+      "bootstrap_95_low": 0.6283263888888889,
+      "bootstrap_95_high": 0.788888888888889
+    },
+    "post_dendritic_role_alignment": {
+      "mean": 0.4966534066591829,
+      "bootstrap_95_low": 0.4048372673333021,
+      "bootstrap_95_high": 0.5808635339863316
+    },
+    "post_opposite_population_signs": {
+      "mean": 0.9333333333333333,
+      "bootstrap_95_low": 0.8333333333333334,
+      "bootstrap_95_high": 1.0
+    },
+    "post_residual_predicts_later_soma": {
+      "mean": 0.12413805151847798,
+      "bootstrap_95_low": -0.05297095898521241,
+      "bootstrap_95_high": 0.3014771497890741
+    },
+    "selected_post_basis_alignment": {
+      "mean": 0.5979741324408241,
+      "bootstrap_95_low": 0.5494225433851968,
+      "bootstrap_95_high": 0.6443336305145159
+    }
+  },
+  "paired_post_remap_success_effects": {
+    "frozen_zero_plasticity": {
+      "mean": 0.6555555555555557,
+      "bootstrap_95_low": 0.5730555555555555,
+      "bootstrap_95_high": 0.7219444444444445
+    },
+    "random_policy_feedback": {
+      "mean": 0.6711111111111111,
+      "bootstrap_95_low": 0.5775000000000001,
+      "bootstrap_95_high": 0.7475
+    },
+    "no_structural_credit": {
+      "mean": 0.6952777777777778,
+      "bootstrap_95_low": 0.6091666666666666,
+      "bootstrap_95_high": 0.7663888888888888
+    },
+    "no_working_memory": {
+      "mean": 0.6863888888888888,
+      "bootstrap_95_low": 0.5969444444444446,
+      "bootstrap_95_high": 0.759173611111111
+    },
+    "no_now_print_gating": {
+      "mean": 0.6555555555555557,
+      "bootstrap_95_low": 0.5738819444444443,
+      "bootstrap_95_high": 0.7247222222222222
+    },
+    "shuffled_top_down_feedback": {
+      "mean": 0.6402777777777777,
+      "bootstrap_95_low": 0.5491666666666667,
+      "bootstrap_95_high": 0.7119444444444444
+    },
+    "apical_pathway_suppressed": {
+      "mean": 0.7158333333333334,
+      "bootstrap_95_low": 0.6258124999999998,
+      "bootstrap_95_high": 0.7900138888888889
+    }
+  }
+}

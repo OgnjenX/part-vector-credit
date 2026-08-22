@@ -1,4 +1,4 @@
-# Initial experiment protocol
+# EXP000 — Prestructured vector-routing sanity check: original protocol
 
 ## Question and hypotheses
 

@@ -2,21 +2,21 @@
 
 ## Project Structure & Module Organization
 
-The installable package is under `src/part_credit`. `task.py` defines the artificial
-intermingled P+/P- task; `model.py` contains the pART/SMART-inspired state and trial
-dynamics; `experiment.py` owns frozen conditions, metrics, and decision rules; and
-`cli.py` writes reproducible artifacts. Scientific claims are split deliberately:
-`docs/PROTOCOL.md` fixes hypotheses and falsification criteria, `docs/MODEL_CARD.md`
-separates Grossberg-derived mechanisms from engineering abstractions, and
-`docs/RESULTS.md` is an append-only narrative of successes and failures. Generated
-JSON and figures belong in `results/` and are ignored by Git.
+The original EXP000 package remains directly under `src/part_credit`; do not rewrite
+its run history. EXP001 is isolated in `src/part_credit/exp001`, with environment,
+learner, analysis, experiment, and CLI modules. Its frozen protocol, theory mapping,
+parameter decisions, failures, results, and conclusion are in
+`experiments/exp001/`. Seed metrics, trial-level NPZ files, and figures under
+`results/` are committed evidence, not disposable build artifacts.
 
 ## Build, Test, and Development Commands
 
-Create an environment and install with `python -m pip install -e '.[dev]'`. Run the
-full suite with `pytest`; run one test with `pytest tests/test_model.py::test_small_run_is_deterministic`.
-Execute the fixed initial experiment using `part-credit --seeds 30 --trials 1200`.
-Use `ruff check .` for the configured Python 3.10, 100-column lint policy.
+Resolve the locked environment with `uv sync --extra dev`. Run the full suite with
+`uv run pytest`; run one test with `uv run pytest tests/test_model.py::test_small_run_is_deterministic`.
+Execute EXP000 with `uv run part-credit --seeds 30 --trials 1200` and EXP001 with
+`uv run part-credit-exp001 --phase development`. Use `uv run ruff check .` for the
+configured Python 3.10, 100-column lint policy. Do not use ad hoc pip environments;
+commit dependency changes together with `uv.lock`.
 
 ## Coding Style & Naming Conventions
 
@@ -31,7 +31,8 @@ part of the machine-readable result format.
 Pytest tests live in `tests/`. Tests must remain deterministic and should distinguish
 mechanism checks from claims about biological fidelity. When changing a scientific
 mechanism, update the protocol or model card before running new confirmatory seeds,
-and append results or failures without erasing earlier runs.
+and append results or failures without erasing earlier runs. Never rerun or overwrite
+the held-out EXP001 `frozen_v1` result as if it were a fresh confirmation.
 
 ## Commit & Pull Request Guidelines
 

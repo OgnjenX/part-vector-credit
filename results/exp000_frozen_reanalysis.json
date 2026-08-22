@@ -1,0 +1,130 @@
+{
+  "label": "EXP000 post hoc frozen-template reanalysis",
+  "plasticity": {
+    "category_lr": 0.0,
+    "value_lr": 0.0
+  },
+  "mean_late_accuracy": 0.9781111111111112,
+  "seeds": [
+    {
+      "seed": 0,
+      "late_accuracy": 0.9833333333333333
+    },
+    {
+      "seed": 1,
+      "late_accuracy": 0.99
+    },
+    {
+      "seed": 2,
+      "late_accuracy": 0.9766666666666667
+    },
+    {
+      "seed": 3,
+      "late_accuracy": 0.9766666666666667
+    },
+    {
+      "seed": 4,
+      "late_accuracy": 0.9533333333333334
+    },
+    {
+      "seed": 5,
+      "late_accuracy": 0.9733333333333334
+    },
+    {
+      "seed": 6,
+      "late_accuracy": 0.9833333333333333
+    },
+    {
+      "seed": 7,
+      "late_accuracy": 0.9866666666666667
+    },
+    {
+      "seed": 8,
+      "late_accuracy": 0.9633333333333334
+    },
+    {
+      "seed": 9,
+      "late_accuracy": 0.99
+    },
+    {
+      "seed": 10,
+      "late_accuracy": 0.9866666666666667
+    },
+    {
+      "seed": 11,
+      "late_accuracy": 0.99
+    },
+    {
+      "seed": 12,
+      "late_accuracy": 0.98
+    },
+    {
+      "seed": 13,
+      "late_accuracy": 0.96
+    },
+    {
+      "seed": 14,
+      "late_accuracy": 0.98
+    },
+    {
+      "seed": 15,
+      "late_accuracy": 0.9833333333333333
+    },
+    {
+      "seed": 16,
+      "late_accuracy": 0.9933333333333333
+    },
+    {
+      "seed": 17,
+      "late_accuracy": 0.9933333333333333
+    },
+    {
+      "seed": 18,
+      "late_accuracy": 0.9733333333333334
+    },
+    {
+      "seed": 19,
+      "late_accuracy": 0.9733333333333334
+    },
+    {
+      "seed": 20,
+      "late_accuracy": 0.9733333333333334
+    },
+    {
+      "seed": 21,
+      "late_accuracy": 0.9633333333333334
+    },
+    {
+      "seed": 22,
+      "late_accuracy": 0.97
+    },
+    {
+      "seed": 23,
+      "late_accuracy": 0.9833333333333333
+    },
+    {
+      "seed": 24,
+      "late_accuracy": 0.9833333333333333
+    },
+    {
+      "seed": 25,
+      "late_accuracy": 0.9833333333333333
+    },
+    {
+      "seed": 26,
+      "late_accuracy": 0.97
+    },
+    {
+      "seed": 27,
+      "late_accuracy": 0.9866666666666667
+    },
+    {
+      "seed": 28,
+      "late_accuracy": 0.9766666666666667
+    },
+    {
+      "seed": 29,
+      "late_accuracy": 0.9633333333333334
+    }
+  ]
+}
