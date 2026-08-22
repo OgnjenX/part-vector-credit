@@ -25,3 +25,12 @@ The temporal analysis reports role-alignment of the residual separately for:
 category selection, pre-action expectation, action execution, sensory feedback,
 outcome and post-outcome. The primary Grossberg composition is evaluated at
 pre-action expectation; the explicit positive control at sensory feedback.
+
+## Frozen confirmation result
+
+The executable classifier returned `C_COMPOSITION_FAILS_LONGITUDINAL_CHAIN`.
+Behavior, no-initial-vector, expectation-emergence, top-down-timing, remap, and
+positive-control criteria passed. Longitudinal-chain, `T→SMART` specificity,
+expression-separation and context-opposition criteria failed. The generic full
+chain was false. Exact paired estimates and predicates are preserved in
+`results/exp003b/frozen_v1/statistics.json`; no post hoc test changed classification.

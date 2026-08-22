@@ -97,11 +97,13 @@ validates only the local arrow used by EXP003b.
 
 ## EXP003b status
 
-EXP003b development and the machine-readable protocol are complete. The held-out confirmation is
-append-only and may be executed exactly once after the frozen-protocol commit is pushed. The
-development result is a warning, not a conclusion: the primary composition altered SMART spike
-timing and lower weights, but did not pass the within-hypothesis dendrite→weight→future-soma
-criterion. No mechanism or threshold was changed to rescue it before confirmation.
+EXP003b is **Outcome C—the tested Grossbergian composition fails despite the validated local
+SMART motif**. On 12 held-out mappings, scalar structural/temporal credit learned useful,
+remappable top-down expectations and improved behavior above frozen/random controls. `T` genuinely
+advanced local spike timing by 6.29 ms and changed lower weights. But the within-hypothesis
+longitudinal correlations were approximately zero before remap and negative after it; only the
+isolated neuron-wise positive control produced the full `D→W→S` chain. See the
+[EXP003b conclusion](experiments/exp003b/CONCLUSION.md).
 
 ## Run EXP000
 

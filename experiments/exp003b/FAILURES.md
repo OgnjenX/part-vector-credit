@@ -32,4 +32,7 @@ confirmation.
    but the no-resonance-gate condition cannot establish an ordinary-trial causal
    role when the gate is never closed. This limitation will be reported, not hidden.
 
-The held-out run remains untouched at protocol freeze.
+8. **Held-out confirmation falsified the strong composition.** The single frozen
+   run was executed only after commit `f10868f` was pushed. It reproduced the
+   development longitudinal failure while the vector positive control validated
+   the task/analysis. No rescue or rerun was attempted.
