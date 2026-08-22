@@ -1,0 +1,21 @@
+{
+  "experiment": "EXP002",
+  "protocol_version": "frozen_v1",
+  "outcome": "C",
+  "label": "Behavioral selection works; learned top-down feedback does not reproduce Francioni",
+  "grossbergian_hypothesis": "falsified for the tested pART-inspired plus outstar composition",
+  "primary_behavior_pre": 0.5283333333333332,
+  "primary_behavior_post": 0.3966666666666667,
+  "primary_topdown_alignment_pre": 0.3428353974238099,
+  "primary_topdown_alignment_post": 0.2868315108671205,
+  "old_topdown_new_mapping_alignment": 0.055994020734000206,
+  "context_opposition": 0.13503740644092804,
+  "primary_longitudinal_pre": -0.325851420916378,
+  "primary_longitudinal_post": -0.016139997717019534,
+  "vector_control_longitudinal_pre": 0.6595839205676026,
+  "vector_control_longitudinal_post": 0.544904649804895,
+  "generic_bandit_behavior_identical": true,
+  "direct_copy_alignment_indistinguishable": true,
+  "apical_learning_suppression_changed_behavior": false,
+  "posthoc_tuning": false
+}

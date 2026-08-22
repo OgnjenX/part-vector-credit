@@ -57,6 +57,18 @@ behavior. The experiment supports Grossberg-style structural/temporal credit at
 the representation level; it does not identify a Grossberg-only mechanism that
 learns arbitrary hidden neuronal signs from scalar outcome.
 
+## EXP002 finding
+
+EXP002 is **Outcome C: the tested learned-top-down mechanism was falsified as an account of the
+full Francioni signature**. On 30 frozen held-out seeds, scalar selection learned behavior
+(0.528 before and 0.397 after hidden remapping) and outstar learning produced role-aligned
+top-down patterns (0.343/0.287). But a plain contextual bandit had identical behavior, direct
+pattern-copy had the same alignment, and the primary longitudinal dendritic effect was -0.326
+before remapping and -0.016 after it. The explicit neuron-wise control reached 0.660/0.545.
+Suppressing top-down learning removed the pattern but changed behavior by exactly zero. See the
+[EXP002 conclusion](experiments/exp002/CONCLUSION.md) and
+[frozen statistical analysis](experiments/exp002/STATISTICAL_ANALYSIS.md).
+
 ## Run EXP000
 
 ```bash

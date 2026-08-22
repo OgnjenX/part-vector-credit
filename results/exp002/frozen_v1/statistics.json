@@ -1,0 +1,310 @@
+{
+  "frozen_no_learning": {
+    "pre_remap_evaluation_success": {
+      "paired_mean_difference": 0.33749999999999997,
+      "paired_bootstrap_ci95": [
+        0.2558333333333333,
+        0.41916666666666663
+      ]
+    },
+    "post_remap_evaluation_success": {
+      "paired_mean_difference": 0.21833333333333335,
+      "paired_bootstrap_ci95": [
+        0.13166666666666668,
+        0.30750000000000005
+      ]
+    },
+    "pre_remap_topdown_alignment": {
+      "paired_mean_difference": 0.3464003443130706,
+      "paired_bootstrap_ci95": [
+        0.2907014913023842,
+        0.405362609598653
+      ]
+    },
+    "post_remap_topdown_alignment": {
+      "paired_mean_difference": 0.2654968070875903,
+      "paired_bootstrap_ci95": [
+        0.22075284503716408,
+        0.3127127406226281
+      ]
+    },
+    "pre_longitudinal_prediction": {
+      "paired_mean_difference": -0.23330849089372988,
+      "paired_bootstrap_ci95": [
+        -0.3600344616541159,
+        -0.10595889427192408
+      ]
+    },
+    "post_longitudinal_prediction": {
+      "paired_mean_difference": -0.10416449975521987,
+      "paired_bootstrap_ci95": [
+        -0.21329327264722464,
+        0.010444224437246541
+      ]
+    }
+  },
+  "random_controller": {
+    "pre_remap_evaluation_success": {
+      "paired_mean_difference": 0.32833333333333337,
+      "paired_bootstrap_ci95": [
+        0.24250000000000002,
+        0.4158333333333334
+      ]
+    },
+    "post_remap_evaluation_success": {
+      "paired_mean_difference": 0.23416666666666672,
+      "paired_bootstrap_ci95": [
+        0.14500000000000007,
+        0.3291666666666666
+      ]
+    },
+    "pre_remap_topdown_alignment": {
+      "paired_mean_difference": 0.3428353974238099,
+      "paired_bootstrap_ci95": [
+        0.3024650293159518,
+        0.38373988616521876
+      ]
+    },
+    "post_remap_topdown_alignment": {
+      "paired_mean_difference": 0.2868315108671205,
+      "paired_bootstrap_ci95": [
+        0.2473107629436304,
+        0.32481345078489055
+      ]
+    },
+    "pre_longitudinal_prediction": {
+      "paired_mean_difference": -0.31032101581078414,
+      "paired_bootstrap_ci95": [
+        -0.42010281089837026,
+        -0.1985614119770213
+      ]
+    },
+    "post_longitudinal_prediction": {
+      "paired_mean_difference": -0.061836561746335526,
+      "paired_bootstrap_ci95": [
+        -0.18138043276260618,
+        0.054699584359148706
+      ]
+    }
+  },
+  "contextual_bandit": {
+    "pre_remap_evaluation_success": {
+      "paired_mean_difference": 0.0,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "post_remap_evaluation_success": {
+      "paired_mean_difference": 0.0,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "pre_remap_topdown_alignment": {
+      "paired_mean_difference": 0.3428353974238099,
+      "paired_bootstrap_ci95": [
+        0.30250750415287236,
+        0.38453704265444083
+      ]
+    },
+    "post_remap_topdown_alignment": {
+      "paired_mean_difference": 0.2868315108671205,
+      "paired_bootstrap_ci95": [
+        0.24717388417182712,
+        0.32585552142108637
+      ]
+    },
+    "pre_longitudinal_prediction": {
+      "paired_mean_difference": -0.3599423075646803,
+      "paired_bootstrap_ci95": [
+        -0.4748213485908913,
+        -0.24207387108256018
+      ]
+    },
+    "post_longitudinal_prediction": {
+      "paired_mean_difference": 0.005298212406482594,
+      "paired_bootstrap_ci95": [
+        -0.13049157867030398,
+        0.14580021660305417
+      ]
+    }
+  },
+  "bandit_selected_pattern_copy": {
+    "pre_remap_evaluation_success": {
+      "paired_mean_difference": 0.0,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "post_remap_evaluation_success": {
+      "paired_mean_difference": 0.0,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "pre_remap_topdown_alignment": {
+      "paired_mean_difference": -0.0016866482295278715,
+      "paired_bootstrap_ci95": [
+        -0.008768465703689434,
+        0.005953675770229456
+      ]
+    },
+    "post_remap_topdown_alignment": {
+      "paired_mean_difference": -0.0007505979550588089,
+      "paired_bootstrap_ci95": [
+        -0.00857175795585327,
+        0.007975703621471816
+      ]
+    },
+    "pre_longitudinal_prediction": {
+      "paired_mean_difference": -0.0018690097857064108,
+      "paired_bootstrap_ci95": [
+        -0.07072665634016642,
+        0.07307382239404944
+      ]
+    },
+    "post_longitudinal_prediction": {
+      "paired_mean_difference": 0.08768516529368937,
+      "paired_bootstrap_ci95": [
+        0.009103420805948845,
+        0.16016225313272053
+      ]
+    }
+  },
+  "part_selection_no_expectancy": {
+    "pre_remap_evaluation_success": {
+      "paired_mean_difference": 0.0,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "post_remap_evaluation_success": {
+      "paired_mean_difference": 0.0,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "pre_remap_topdown_alignment": {
+      "paired_mean_difference": 0.3428353974238099,
+      "paired_bootstrap_ci95": [
+        0.3031168066099071,
+        0.38355533671989117
+      ]
+    },
+    "post_remap_topdown_alignment": {
+      "paired_mean_difference": 0.2868315108671205,
+      "paired_bootstrap_ci95": [
+        0.24838932581119097,
+        0.3247289935478445
+      ]
+    },
+    "pre_longitudinal_prediction": {
+      "paired_mean_difference": -0.3599423075646803,
+      "paired_bootstrap_ci95": [
+        -0.4786079118049867,
+        -0.23883666267267703
+      ]
+    },
+    "post_longitudinal_prediction": {
+      "paired_mean_difference": 0.005298212406482594,
+      "paired_bootstrap_ci95": [
+        -0.1318481088511791,
+        0.14492037666641455
+      ]
+    }
+  },
+  "primary_apical_learning_suppressed": {
+    "pre_remap_evaluation_success": {
+      "paired_mean_difference": 0.0,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "post_remap_evaluation_success": {
+      "paired_mean_difference": 0.0,
+      "paired_bootstrap_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "pre_remap_topdown_alignment": {
+      "paired_mean_difference": 0.33708772537417225,
+      "paired_bootstrap_ci95": [
+        0.24632913994680158,
+        0.42433404419965753
+      ]
+    },
+    "post_remap_topdown_alignment": {
+      "paired_mean_difference": 0.3212145163588315,
+      "paired_bootstrap_ci95": [
+        0.20601166624801703,
+        0.428935342824904
+      ]
+    },
+    "pre_longitudinal_prediction": {
+      "paired_mean_difference": -0.2537242202864853,
+      "paired_bootstrap_ci95": [
+        -0.35738428694875884,
+        -0.15230907303653896
+      ]
+    },
+    "post_longitudinal_prediction": {
+      "paired_mean_difference": 0.019433316422874623,
+      "paired_bootstrap_ci95": [
+        -0.11037412787076209,
+        0.15302114052751833
+      ]
+    }
+  },
+  "explicit_vector_error_positive_control": {
+    "pre_remap_evaluation_success": {
+      "paired_mean_difference": -0.47166666666666673,
+      "paired_bootstrap_ci95": [
+        -0.5566666666666666,
+        -0.38500000000000006
+      ]
+    },
+    "post_remap_evaluation_success": {
+      "paired_mean_difference": -0.6033333333333333,
+      "paired_bootstrap_ci95": [
+        -0.6941875000000001,
+        -0.5141666666666668
+      ]
+    },
+    "pre_remap_topdown_alignment": {
+      "paired_mean_difference": -0.6571646025734476,
+      "paired_bootstrap_ci95": [
+        -0.6974076950511167,
+        -0.6145571324066668
+      ]
+    },
+    "post_remap_topdown_alignment": {
+      "paired_mean_difference": -0.7131684891303969,
+      "paired_bootstrap_ci95": [
+        -0.7515881499961083,
+        -0.6742377328861145
+      ]
+    },
+    "pre_longitudinal_prediction": {
+      "paired_mean_difference": -0.9854353414839804,
+      "paired_bootstrap_ci95": [
+        -1.083903298537405,
+        -0.8868737108104908
+      ]
+    },
+    "post_longitudinal_prediction": {
+      "paired_mean_difference": -0.5610446475219144,
+      "paired_bootstrap_ci95": [
+        -0.6642795367902093,
+        -0.45826943173278467
+      ]
+    }
+  }
+}

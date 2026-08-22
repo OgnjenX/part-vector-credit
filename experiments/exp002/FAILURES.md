@@ -24,3 +24,18 @@ the residual analysis. This was a control implementation defect: a vector-error 
 must express its neuron-indexed teaching signal after task feedback. Development v2 adds
 `3 * error_improvement * c` only to the sensory-feedback, outcome, and post-outcome dendritic bins
 of that explicitly forbidden condition. No Grossberg condition, metric, or threshold changed.
+
+## Frozen confirmation failures (preserved conclusions, not repaired)
+
+- Primary context opposition was 0.135, below the frozen 0.25 threshold.
+- Primary Francioni residual alignment had the wrong sign (-0.206/-0.260).
+- Longitudinal prediction was -0.326 before remapping and -0.016 after it; neither met the positive
+  0.15 criterion, and the first was reliably negative.
+- Apical-learning suppression did not impair behavior at all, failing the causal-apical criterion.
+- Direct-copy bandit matched the primary's top-down alignment, so the alignment itself was not
+  specifically explained by pART/outstar machinery.
+- Ordinary post-recruitment resonance was 1.000 and no-resonance-gate was identical, so resonance
+  gating did not causally explain the primary result.
+- Corrected local motor-basis consolidation changed weights but harmed behavior.
+
+No post-held-out mechanism or parameter repair was attempted.
