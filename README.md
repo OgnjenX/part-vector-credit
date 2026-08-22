@@ -40,6 +40,10 @@ qualitative sign opposition without supplying neuron-wise errors.
   reinforcement selects a distributed causal hypothesis. Its [theory mapping](experiments/exp002/THEORY_MAPPING.md)
   distinguishes Grossberg-derived principles from cross-system extrapolations and engineering
   baselines.
+- [EXP003 theory audit](experiments/exp003/THEORY_AUDIT.md) asks the stronger causal question:
+  can a learned expectation regulate SMART-derived local plasticity so early dendritic state
+  predicts later synaptic and somatic change? The audit found a real SMART mechanism but also a
+  cross-system limitation. No EXP003 code or simulation exists at this checkpoint.
 
 ## Main finding
 
