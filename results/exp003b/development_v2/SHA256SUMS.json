@@ -1,0 +1,22 @@
+{
+  "raw/bandit_direct_copy_apical.npz": "8835723471d6a5d9c79044be4628f4c508339e3b45f1160ca54c57ce6afc8059",
+  "raw/bandit_generic_hebb.npz": "8b71a7e885ec091ea56cfa78603bd21bad162b27e23a6b03a4aa14f82d6744bb",
+  "raw/contextual_bandit.npz": "311c277578689ebc4824ad945405d9baba7d792cce2752a7911718aa3c621b69",
+  "raw/corrected_motor_basis_outstar_probe.npz": "15fb0cf3a7f1d8612f6f9dad9e8f1c4eeec005ccb732d3be5464804f7056bba1",
+  "raw/explicit_vector_credit_positive_control.npz": "3783bf8116c541010358e39535442c5e2be34d0c64be108d7b4ff851aa0b6291",
+  "raw/frozen_no_learning.npz": "f7d322322d58d158ec471defba69713698dbf26973f2d1fd304f73d1e7b9656c",
+  "raw/part_learned_t_no_smart.npz": "87ffdc19346fc258032797f69f8bc01d0fa1b7f85b8272ba738235495e3348fc",
+  "raw/part_selection_no_expectancy.npz": "4ad0dbf2a508b165b68b525a861755aff83fb1212b1da97352c9f523175eb914",
+  "raw/primary_no_motivated_reinforcement.npz": "7a11b6944a558425893b7738effcb38fa168a7f15d75690ed4fbd7a6d83dcee2",
+  "raw/primary_no_reset_search.npz": "e5d7b15e2e6bbc03c5209376c564317321176ee6511b6756a19122abe5f126a4",
+  "raw/primary_no_resonance_gate.npz": "e5e5c81236b04fe59d8ba4f7ec628487dfdbb3d541568cd64679eb514e7fa994",
+  "raw/primary_no_structural_credit.npz": "d5854559189dab428cfd83a2b52488d9b81cfb3ad90ccac1b6fd791e4f8537b8",
+  "raw/primary_no_working_memory.npz": "8cc10876c1ac678877948f0773d742ec12ad3a48415dc614298e7ce1696ce52f",
+  "raw/primary_part_t_smart.npz": "e5e5c81236b04fe59d8ba4f7ec628487dfdbb3d541568cd64679eb514e7fa994",
+  "raw/primary_post_learning_apical_suppressed.npz": "1260773f8129624098f9de51123a5394dc5321e3e144a72c8d40d3415cf526c0",
+  "raw/primary_shuffled_topdown.npz": "5e0ddc5ddf6c16800ffddbd1820bb03d275b994b45fdbab0b8ba6e09b152c4ae",
+  "raw/primary_t_learning_disabled.npz": "2e4533bdfa6c3168924c5227838a8ac5cca727bbf6f0d56af33d8d09b001808e",
+  "raw/primary_t_to_smart_blocked.npz": "2a14664378669014a59e65eb78611c0a8eebd5aae0e0a5705e3414008a6bba98",
+  "raw/random_controller.npz": "33c82d0d3d3ec99df9be5abc9cb6f5c4f74d145648294e5666d65f3247b97f4a",
+  "summary.json": "e7fdc1d6fe5bc15c8e25b8b74f03b67f6bd1b59b96d50d051bb8066ad7b47242"
+}

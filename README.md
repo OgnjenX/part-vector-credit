@@ -47,6 +47,11 @@ qualitative sign opposition without supplying neuron-wise errors.
 - [EXP003a](experiments/exp003a/RESULTS.md) independently validates a minimal Brian2 motif before
   any pART, reward, or BCI integration. Its [theory mapping](experiments/exp003a/THEORY_MAPPING.md)
   gives the exact SMART Eq. 5/6 reduction and its limitations.
+- [EXP003b](experiments/exp003b/PROTOCOL.md) composes that locked motif with pART-inspired
+  delayed structural credit and context-specific learned expectancies in a stepwise BCI. Its
+  [integration contract](experiments/exp003b/INTEGRATION_CONTRACT.md) locks the local mechanism
+  and its [theory mapping](experiments/exp003b/THEORY_MAPPING.md) states the cross-system claim
+  boundary.
 
 ## Main finding
 
@@ -88,7 +93,15 @@ top-down vector, reward, error, or hidden causal role.
 
 This is not a full SMART validation. It uses LIF cells and a normalized post-spike proxy for
 SMART's raw-voltage gate, and it supplies rather than learns the expectation and mismatch. It
-validates only the local arrow needed for a future EXP003b. EXP003b has not been started.
+validates only the local arrow used by EXP003b.
+
+## EXP003b status
+
+EXP003b development and the machine-readable protocol are complete. The held-out confirmation is
+append-only and may be executed exactly once after the frozen-protocol commit is pushed. The
+development result is a warning, not a conclusion: the primary composition altered SMART spike
+timing and lower weights, but did not pass the within-hypothesis dendrite→weight→future-soma
+criterion. No mechanism or threshold was changed to rescue it before confirmation.
 
 ## Run EXP000
 
@@ -124,6 +137,17 @@ an existing output directory.
 uv sync --extra dev
 uv run part-credit-exp003a --output results/exp003a/development_v4
 uv run pytest tests/test_exp003a_smart_motif.py
+```
+
+## Run EXP003b
+
+EXP003b uses the existing uv environment and a Brian2-generated response cache. The confirmation
+command verifies every frozen source/cache hash and refuses to overwrite an output.
+
+```bash
+uv run part-credit-exp003b robustness --output results/exp003b/robustness_v1
+uv run part-credit-exp003b development --output results/exp003b/development_v2
+uv run part-credit-exp003b confirmatory --output results/exp003b/frozen_v1
 ```
 
 EXP000 outputs are written to `results/initial_experiment.json` and `.png`. EXP001
