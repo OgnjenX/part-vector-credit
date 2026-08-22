@@ -105,6 +105,15 @@ longitudinal correlations were approximately zero before remap and negative afte
 isolated neuron-wise positive control produced the full `D→W→S` chain. See the
 [EXP003b conclusion](experiments/exp003b/CONCLUSION.md).
 
+### EXP003b post-hoc failure localization
+
+A strictly post-hoc analysis of the committed held-out arrays localizes the first
+information loss to the modeled soma-conditioned Francioni residual—not to raw
+`T`, the on-center/off-surround transform, local SMART plasticity, or the
+held-hypothesis future response. It is classified diagnostic A with strong
+sparsity/precision caveats and does not alter frozen Outcome C. See the
+[post-hoc report](experiments/exp003b_posthoc/REPORT.md).
+
 ## Run EXP000
 
 ```bash

@@ -1,0 +1,484 @@
+{
+  "label": "POST HOC / FAILURE LOCALIZATION \u2014 not confirmatory evidence",
+  "frozen_outcome_unchanged": "C_COMPOSITION_FAILS_LONGITUDINAL_CHAIN",
+  "evidence_verification": {
+    "manifest_files": 23,
+    "mismatches": [],
+    "frozen_outcome": "C_COMPOSITION_FAILS_LONGITUDINAL_CHAIN",
+    "raw_sha256": "3793a4962f13a1fa982a9bab38b73489d0d86a6eb533d535f39d4f5c5feeab8c",
+    "cache_sha256": "766130f8f3f4d395a201f7a4b20a1cfe275f3930f3dc132e68c2d473e56e28d3"
+  },
+  "method": {
+    "grain": "12 seeds; four fixed-h units per seed (pre/post remap \u00d7 two contexts)",
+    "early_late_windows": {
+      "pre": {
+        "early": [
+          0,
+          40
+        ],
+        "late": [
+          60,
+          100
+        ]
+      },
+      "post": {
+        "early": [
+          120,
+          160
+        ],
+        "late": [
+          200,
+          240
+        ]
+      }
+    },
+    "net_topdown_definition": "mean[(g_td_peak*(E_exc-V_peak)+g_inh_peak*(E_inh-V_peak))/tau_m]",
+    "net_topdown_limitation": "peak conductances and V_peak are not time-aligned; this is an equation-derived current envelope, not an instantaneous/integrated current",
+    "bootstrap": "5000 seed-level resamples",
+    "subset_status": "engaged-cell analyses are diagnostic only"
+  },
+  "frozen_metric_parity": {
+    "pre_d_to_w": {
+      "max_abs_seed_error": 5.675554598516541e-07,
+      "seeds_with_abs_error_le_1e_6": 12,
+      "seeds_with_abs_error_gt_0_1": 0,
+      "interpretation": "raw float32 reconstruction; frozen metrics used float64 in-memory snapshots"
+    },
+    "pre_d_to_s": {
+      "max_abs_seed_error": 5.675554599626764e-07,
+      "seeds_with_abs_error_le_1e_6": 12,
+      "seeds_with_abs_error_gt_0_1": 0,
+      "interpretation": "raw float32 reconstruction; frozen metrics used float64 in-memory snapshots"
+    },
+    "post_d_to_w": {
+      "max_abs_seed_error": 0.4994852190835883,
+      "seeds_with_abs_error_le_1e_6": 10,
+      "seeds_with_abs_error_gt_0_1": 1,
+      "interpretation": "raw float32 reconstruction; frozen metrics used float64 in-memory snapshots"
+    },
+    "post_d_to_s": {
+      "max_abs_seed_error": 0.4994854845418134,
+      "seeds_with_abs_error_le_1e_6": 10,
+      "seeds_with_abs_error_gt_0_1": 1,
+      "interpretation": "raw float32 reconstruction; frozen metrics used float64 in-memory snapshots"
+    }
+  },
+  "metrics": {
+    "early_events": {
+      "mean": 19.520833333333332,
+      "ci95": [
+        17.458333333333332,
+        21.604166666666668
+      ],
+      "n_seeds": 12
+    },
+    "delta_w_nonzero_neurons": {
+      "mean": 0.5625,
+      "ci95": [
+        0.4166666666666667,
+        0.7083333333333334
+      ],
+      "n_seeds": 12
+    },
+    "delta_w_zero_neurons": {
+      "mean": 7.4375,
+      "ci95": [
+        7.291666666666667,
+        7.604166666666667
+      ],
+      "n_seeds": 12
+    },
+    "delta_w_to_delta_s": {
+      "mean": 0.3958333333333333,
+      "ci95": [
+        0.20833333333333334,
+        0.5833333333333334
+      ],
+      "n_seeds": 12
+    },
+    "raw_t_to_clipped_t": {
+      "mean": 0.902678936861015,
+      "ci95": [
+        0.8923004764821446,
+        0.912933497962127
+      ],
+      "n_seeds": 12
+    },
+    "clipped_t_to_g_td": {
+      "mean": 0.9625611019061954,
+      "ci95": [
+        0.9213493051467099,
+        0.987795781919678
+      ],
+      "n_seeds": 12
+    },
+    "raw_t_to_neg_g_inh": {
+      "mean": 0.607701169004996,
+      "ci95": [
+        0.489915303768218,
+        0.7265098710092129
+      ],
+      "n_seeds": 12
+    },
+    "g_td_to_net_topdown": {
+      "mean": 0.9727270355786074,
+      "ci95": [
+        0.9309950482647869,
+        0.9945936023071767
+      ],
+      "n_seeds": 12
+    },
+    "neg_g_inh_to_net_topdown": {
+      "mean": 0.6762805537776257,
+      "ci95": [
+        0.5530757584372347,
+        0.7995981125866647
+      ],
+      "n_seeds": 12
+    },
+    "net_topdown_to_d_residual": {
+      "mean": 0.11341280182667328,
+      "ci95": [
+        -0.019720066812047,
+        0.23956437841584224
+      ],
+      "n_seeds": 12
+    },
+    "raw_t_to_delta_w": {
+      "mean": 0.41646956228388127,
+      "ci95": [
+        0.2997313071408645,
+        0.5274839041494481
+      ],
+      "n_seeds": 12
+    },
+    "raw_t_to_delta_s": {
+      "mean": 0.25354259492776615,
+      "ci95": [
+        0.12456278008755514,
+        0.3863810310050361
+      ],
+      "n_seeds": 12
+    },
+    "raw_t_to_role": {
+      "mean": 0.34834804234619354,
+      "ci95": [
+        0.27351644327365193,
+        0.4316955860162497
+      ],
+      "n_seeds": 12
+    },
+    "clipped_t_to_delta_w": {
+      "mean": 0.49322500373756073,
+      "ci95": [
+        0.347655286089196,
+        0.6232938079995869
+      ],
+      "n_seeds": 12
+    },
+    "clipped_t_to_delta_s": {
+      "mean": 0.3271690352972623,
+      "ci95": [
+        0.17369513277230575,
+        0.4887732435162424
+      ],
+      "n_seeds": 12
+    },
+    "clipped_t_to_role": {
+      "mean": 0.3186273867045941,
+      "ci95": [
+        0.23032096003090724,
+        0.4047042385676063
+      ],
+      "n_seeds": 12
+    },
+    "g_td_to_delta_w": {
+      "mean": 0.4916898368674836,
+      "ci95": [
+        0.3499942880731144,
+        0.6170558195860386
+      ],
+      "n_seeds": 12
+    },
+    "g_td_to_delta_s": {
+      "mean": 0.325770414643429,
+      "ci95": [
+        0.17377215506650862,
+        0.4873453495573098
+      ],
+      "n_seeds": 12
+    },
+    "g_td_to_role": {
+      "mean": 0.31977437907768613,
+      "ci95": [
+        0.23856929411363645,
+        0.39782067070461485
+      ],
+      "n_seeds": 12
+    },
+    "neg_g_inh_to_delta_w": {
+      "mean": 0.404890410940043,
+      "ci95": [
+        0.2701715458126378,
+        0.5292252285040823
+      ],
+      "n_seeds": 12
+    },
+    "neg_g_inh_to_delta_s": {
+      "mean": 0.23897098899117997,
+      "ci95": [
+        0.12036654999471236,
+        0.3644223667094541
+      ],
+      "n_seeds": 12
+    },
+    "neg_g_inh_to_role": {
+      "mean": 0.23080978053571785,
+      "ci95": [
+        0.1619586703384475,
+        0.29582609846652785
+      ],
+      "n_seeds": 12
+    },
+    "net_topdown_peak_envelope_to_delta_w": {
+      "mean": 0.49967617670925724,
+      "ci95": [
+        0.35523431778099035,
+        0.6270043594660237
+      ],
+      "n_seeds": 12
+    },
+    "net_topdown_peak_envelope_to_delta_s": {
+      "mean": 0.3334831249147012,
+      "ci95": [
+        0.1790356895174612,
+        0.4979224659518015
+      ],
+      "n_seeds": 12
+    },
+    "net_topdown_peak_envelope_to_role": {
+      "mean": 0.30676449088826313,
+      "ci95": [
+        0.22477177854631744,
+        0.3856367958219162
+      ],
+      "n_seeds": 12
+    },
+    "latency_advance_to_delta_w": {
+      "mean": 0.10416666666666667,
+      "ci95": [
+        0.041666666666666664,
+        0.16666666666666666
+      ],
+      "n_seeds": 12
+    },
+    "latency_advance_to_delta_s": {
+      "mean": -0.0625,
+      "ci95": [
+        -0.14583333333333334,
+        0.02083333333333334
+      ],
+      "n_seeds": 12
+    },
+    "latency_advance_to_role": {
+      "mean": 0.023622779563076696,
+      "ci95": [
+        -0.0078742598543589,
+        0.055119818980512304
+      ],
+      "n_seeds": 12
+    },
+    "created_spike_frequency_to_delta_w": {
+      "mean": 0.12499999999999999,
+      "ci95": [
+        0.06249999999999998,
+        0.1875
+      ],
+      "n_seeds": 12
+    },
+    "created_spike_frequency_to_delta_s": {
+      "mean": -0.041666666666666664,
+      "ci95": [
+        -0.1458333333333333,
+        0.06249999999999999
+      ],
+      "n_seeds": 12
+    },
+    "created_spike_frequency_to_role": {
+      "mean": 0.031497039417435604,
+      "ci95": [
+        2.2840525767028056e-18,
+        0.06299407883487121
+      ],
+      "n_seeds": 12
+    },
+    "d_residual_to_delta_w": {
+      "mean": -0.0037656695076293775,
+      "ci95": [
+        -0.13728501498251017,
+        0.1353046389275233
+      ],
+      "n_seeds": 12
+    },
+    "d_residual_to_delta_s": {
+      "mean": -0.03673538467181845,
+      "ci95": [
+        -0.1567589478901959,
+        0.07483218315179235
+      ],
+      "n_seeds": 12
+    },
+    "d_residual_to_role": {
+      "mean": 0.0754370136513149,
+      "ci95": [
+        0.002631402550322225,
+        0.15440841268519703
+      ],
+      "n_seeds": 12
+    }
+  },
+  "engagement": {
+    "spike_count_changed_fraction": {
+      "mean": 0.017440025252525252,
+      "ci95": [
+        0.012200126262626265,
+        0.022427398989898987
+      ]
+    },
+    "topdown_created_spike_fraction": {
+      "mean": 0.009627525252525254,
+      "ci95": [
+        0.007244318181818182,
+        0.011805555555555555
+      ]
+    },
+    "latency_changed_all_cellframes_fraction": {
+      "mean": 0.009611742424242424,
+      "ci95": [
+        0.005634469696969697,
+        0.013731060606060603
+      ]
+    },
+    "latency_comparable_fraction": {
+      "mean": 0.010085227272727273,
+      "ci95": [
+        0.005918166035353534,
+        0.014109848484848482
+      ]
+    },
+    "frame_delta_w_nonzero_fraction": {
+      "mean": 0.019712752525252526,
+      "ci95": [
+        0.01387310606060606,
+        0.025221748737373723
+      ]
+    },
+    "latency_changed_given_comparable_fraction": {
+      "mean": 0.7922964309739938,
+      "ci95": [
+        0.5576030294634513,
+        0.9598056341939917
+      ]
+    },
+    "frame_delta_w_distribution": {
+      "minimum": -0.0007752180099487305,
+      "q01": 0.0,
+      "q25": 0.0,
+      "median": 0.0,
+      "q75": 0.0,
+      "q99": 0.004021104425191879,
+      "maximum": 0.00818413496017456,
+      "unique_rounded_1e_8": 599
+    }
+  },
+  "fixed_h_sparsity": {
+    "fixed_h_delta_w_zero_neuron_fraction": 0.9296875,
+    "fixed_h_nonzero_neurons_median": 1.0,
+    "fixed_h_nonzero_neurons_q25_q75": [
+      0.0,
+      1.0
+    ]
+  },
+  "engaged_subset": {
+    "engaged_cells": {
+      "mean": 2.25,
+      "ci95": [
+        1.5833333333333333,
+        2.8333333333333335
+      ],
+      "n_seeds": 12
+    },
+    "total_cells": {
+      "mean": 32.0,
+      "ci95": [
+        32.0,
+        32.0
+      ],
+      "n_seeds": 12
+    },
+    "raw_t_to_delta_w_engaged": {
+      "mean": -0.024665500071070195,
+      "ci95": [
+        -0.2912186968501509,
+        0.2559198201497222
+      ],
+      "n_seeds": 12
+    },
+    "clipped_t_to_delta_w_engaged": {
+      "mean": -0.017021843984764282,
+      "ci95": [
+        -0.28654824613937396,
+        0.2651674324517306
+      ],
+      "n_seeds": 12
+    },
+    "g_td_to_delta_w_engaged": {
+      "mean": -0.014068311830193622,
+      "ci95": [
+        -0.2871909267156773,
+        0.268389586645266
+      ],
+      "n_seeds": 12
+    },
+    "neg_g_inh_to_delta_w_engaged": {
+      "mean": -0.2763378872225293,
+      "ci95": [
+        -0.5783077180515339,
+        0.04405542257740044
+      ],
+      "n_seeds": 12
+    },
+    "net_topdown_peak_envelope_to_delta_w_engaged": {
+      "mean": -0.3113687065948659,
+      "ci95": [
+        -0.5504836492754757,
+        -0.08765397140412219
+      ],
+      "n_seeds": 12
+    },
+    "latency_advance_to_delta_w_engaged": {
+      "mean": -0.17337812480513792,
+      "ci95": [
+        -0.37698560184079316,
+        0.0
+      ],
+      "n_seeds": 12
+    },
+    "created_spike_frequency_to_delta_w_engaged": {
+      "mean": -0.16602141462392336,
+      "ci95": [
+        -0.35884101974089355,
+        -0.0017145578293535472
+      ],
+      "n_seeds": 12
+    },
+    "d_residual_to_delta_w_engaged": {
+      "mean": 0.04067564079903375,
+      "ci95": [
+        -0.25107630490109545,
+        0.3333535820253785
+      ],
+      "n_seeds": 12
+    }
+  }
+}
