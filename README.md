@@ -52,6 +52,12 @@ qualitative sign opposition without supplying neuron-wise errors.
   [integration contract](experiments/exp003b/INTEGRATION_CONTRACT.md) locks the local mechanism
   and its [theory mapping](experiments/exp003b/THEORY_MAPPING.md) states the cross-system claim
   boundary.
+- [Grossberg–Francioni bridge audit](experiments/grossberg_francioni_bridge/CONCLUSION.md)
+  reconstructs the published systems-level and cellular endpoints without adding a new model.
+  Its [bridge graph](experiments/grossberg_francioni_bridge/BRIDGE_GRAPH.md) and
+  [assumption ledger](experiments/grossberg_francioni_bridge/ASSUMPTION_LEDGER.md) distinguish
+  source-derived mechanisms from cross-system composition, generic neurobiology, and genuinely
+  new hypotheses. This audit does not alter any frozen experimental classification.
 
 ## Main finding
 
@@ -113,6 +119,18 @@ information loss to the modeled soma-conditioned Francioni residual—not to raw
 held-hypothesis future response. It is classified diagnostic A with strong
 sparsity/precision caveats and does not alter frozen Outcome C. See the
 [post-hoc report](experiments/exp003b_posthoc/REPORT.md).
+
+### Grossberg–Francioni theory bridge
+
+The source audit finds that Grossberg explicitly provides representation-level structural and
+temporal credit, category-owned learned expectations, laminar apical feedback, match-dependent
+on-center/off-surround dynamics, and local timing-dependent plasticity. Published theory does
+not specify how scalar outcome trains a pART-selected representation to acquire an arbitrary,
+neuron-resolved feedback topology over intermingled RSC P+/P− cells, nor does it identify
+SMART's inhibitory surround with the NDNF-sensitive Francioni signal. The account is therefore
+under-specified rather than shown fundamentally incapable. See the
+[full conclusion](experiments/grossberg_francioni_bridge/CONCLUSION.md) and
+[discriminating predictions](experiments/grossberg_francioni_bridge/DISCRIMINATING_PREDICTIONS.md).
 
 ## Run EXP000
 
