@@ -21,6 +21,7 @@ part-credit-exp001 = "part_credit.exp001.cli:main"
 part-credit-exp002 = "part_credit.exp002.cli:main"
 part-credit-exp003a = "part_credit.exp003a.cli:main"
 part-credit-exp003b = "part_credit.exp003b.cli:main"
+part-credit-exp004 = "part_credit.exp004.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
