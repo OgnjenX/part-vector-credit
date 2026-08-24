@@ -1,6 +1,6 @@
 # EXP004 protocol — origin of neuron-specific topology
 
-Protocol status: development-complete candidate for freeze. Held-out seeds have not been executed.
+Protocol status: **FROZEN before confirmation**. Held-out seeds have not been executed. The exact machine-readable lock is in `FROZEN_PROTOCOL.json`; its development checkpoint is `bcd6c838d04b8d21892ec0177bdb5605bc0f068e`.
 
 ## Primary question
 
