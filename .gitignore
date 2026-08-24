@@ -5,3 +5,5 @@ __pycache__/
 .ruff_cache/
 *.egg-info/
 .idea/
+results/exp005/development_*/raw/
+results/exp005/development_*/SHA256SUMS.json

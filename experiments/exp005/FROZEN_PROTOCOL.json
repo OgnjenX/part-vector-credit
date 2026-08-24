@@ -1,0 +1,71 @@
+{
+  "experiment": "EXP005 — De novo acquisition of arbitrary RSC population topology",
+  "status": "frozen",
+  "source_gate_outcome": "E_NO_GROSSBERG_CANDIDATE_EXISTS",
+  "grossberg_primary_run_permitted": false,
+  "executable_scope": "generic_node_perturbation_diagnostic_only",
+  "held_out_touched": false,
+  "development_seeds": [501, 502, 503, 504],
+  "confirmatory_seeds": [
+    9500, 9501, 9502, 9503, 9504, 9505, 9506, 9507,
+    9508, 9509, 9510, 9511, 9512, 9513, 9514, 9515
+  ],
+  "confirmation_output": "results/exp005/frozen_generic_v1",
+  "scenario_names": [
+    "n8_generic_node_perturbation",
+    "n8_outcome_shuffled",
+    "n8_hidden_vector_oracle",
+    "n16_generic_node_perturbation",
+    "n16_outcome_shuffled",
+    "n16_hidden_vector_oracle",
+    "n32_generic_node_perturbation",
+    "n32_outcome_shuffled",
+    "n32_hidden_vector_oracle",
+    "n64_generic_node_perturbation",
+    "n64_outcome_shuffled",
+    "n64_hidden_vector_oracle",
+    "n32_plasticity_disabled",
+    "n32_temporal_eligibility_disabled",
+    "n32_exploration_removed",
+    "n32_random_no_learning"
+  ],
+  "parameters": {
+    "neuron_counts": [8, 16, 32, 64],
+    "acquisition_episodes": 1280,
+    "remap_episodes": 2560,
+    "action_frames": 3,
+    "state_gain": 0.65,
+    "success_threshold": 0.60,
+    "learning_rate": 0.0015,
+    "learning_rate_reference_neurons": 32,
+    "oracle_learning_rate": 0.012,
+    "perturbation_sd": 0.10,
+    "initial_weight_sd": 0.008,
+    "weight_bound": 0.30,
+    "eligibility_decay": 0.80,
+    "baseline_rate": 0.08,
+    "batch_size": 16,
+    "remap_changed_fraction_bounds": [0.25, 0.75]
+  },
+  "classification_floors": {
+    "alignment": 0.70,
+    "sign_fraction": 0.80,
+    "behavior": 0.60,
+    "ablation_effect": 0.40,
+    "reversal": 0.75,
+    "reconstruction_rmse": 1e-12
+  },
+  "bootstrap_replicates": 5000,
+  "primary_anchor_population": 32,
+  "source_sha256": {
+    "src/part_credit/exp005/__init__.py": "802c11e3f13c9fab65a83558c7d6859c5e87871605cae60401ddc1135a54c2f8",
+    "src/part_credit/exp005/model.py": "d3b3f83808a2cc7e779d74b8927caba65c6e52e795dda656e21f6a4a12df60be",
+    "src/part_credit/exp005/experiment.py": "0d13f1fd45c3cedfc21f407cb37bdfa680511aeb454810d299719005b34e55dd",
+    "src/part_credit/exp005/statistics.py": "49b1df1bed121c7e7fb5776cc1534e9af4bf9f748225c93aa5b7acd6a674e365",
+    "src/part_credit/exp005/figures.py": "3c7f4cb9634864c6e7cacc5ebbc675c719a120ced8b5a9948628e55f0ce641ac",
+    "src/part_credit/exp005/cli.py": "6e644eda83cdc14e0ca2dcb74f92ec06b47eb46354bd27dbd1ef2e07b0193a46",
+    "tests/test_exp005_generic.py": "dd05ce7a7aa6af0fe53d5211da9323da5d68c236f37238813f4fef648888a464",
+    "pyproject.toml": "5b78f7560a1d93bf1f66b9356f8e83110935a84c9220f13a033bde3e8e431e0d"
+  },
+  "freeze_note": "No Grossberg-primary confirmation exists. This locks only the separately labeled generic diagnostic and oracle controls."
+}
