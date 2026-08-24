@@ -27,3 +27,11 @@ The hard-stop audit turns on two inseparable new assumptions:
 Together they are the cellular-credit algorithm. Neither can be introduced as a
 minor implementation convenience.
 
+## Held-out diagnostic update
+
+The class-D generic comparator validates the *computational sufficiency* of these
+two assumptions in the frozen abstraction: removing either exploration or temporal
+eligibility eliminated learning, and shuffling scalar outcomes away from their
+eligibilities reduced N=32 post-remap alignment from 0.964 to 0.229. This does not
+upgrade either assumption to Grossberg-derived. It makes them the precise added
+mechanism that a future biological or source-based account must justify.

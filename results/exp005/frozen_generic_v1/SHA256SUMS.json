@@ -1,0 +1,23 @@
+{
+  "figures/n32_acquisition_trajectory.png": "71cebb7be69f8d7b2c5327b23d41c50dd30e81c2da994260c0785cc9fc531598",
+  "figures/n32_alignment_controls.png": "5e954374a50b0586138ad01a4bb43ba7ed1b09a5a6c3c2b88433a0bff5f249d8",
+  "figures/scaling_after_remap.png": "a499c74fdbca71a700f5b1aa04be874b7b554029cf06a33dccffabd9618d6705",
+  "raw/n16_generic_node_perturbation.npz": "d78829d00ceceeaaedce653656347c583bd23b9ed430412c5f3c584034d4416f",
+  "raw/n16_hidden_vector_oracle.npz": "aec1a15684fc7628ca574316126b00b1939aa2eee6dc33e29d646be2b71dd94f",
+  "raw/n16_outcome_shuffled.npz": "d9d40f339e40396d826cedba10a00e0f9233e3d378dee8de235aa74d2c4e8325",
+  "raw/n32_exploration_removed.npz": "1d55ee53275793f0ee9c016755277b318a80fcce625978f204312fc111685c1b",
+  "raw/n32_generic_node_perturbation.npz": "7b1f55f63c4bc541236daa0e96e503f0abb500a30a0b39238a51627823b1f9ea",
+  "raw/n32_hidden_vector_oracle.npz": "54e4d1c35d066ddafb1cd3a7e1f7fe3a5c40b1cc1516cd05646bf4b86b71e16d",
+  "raw/n32_outcome_shuffled.npz": "9f591b863163c3008e23c1136ef8ea49d22cefd9f45020646b78d578ece449ca",
+  "raw/n32_plasticity_disabled.npz": "ad6972ab87cc541d383826c2ad3b1b5e41124d6ab8228e45d52c0ef9a43740e9",
+  "raw/n32_random_no_learning.npz": "05e2467437cc9ae9f462b44545651eaed9ad3c67a511b2efbee9f9e9338f51e5",
+  "raw/n32_temporal_eligibility_disabled.npz": "8c87d55017910eeb9eee9a803a342b748b2b19691ec9ae517e315cdac9a90c25",
+  "raw/n64_generic_node_perturbation.npz": "b78880abbc98e0a61886b34b141acc736510a53931700ec65f0aeb25015fdbad",
+  "raw/n64_hidden_vector_oracle.npz": "910782a5b3f7a310c6ab2cee86c6bc80a264d12750d0b8bc8112cccad57ebc20",
+  "raw/n64_outcome_shuffled.npz": "d5798053c6ffb94e05b85dd1ef0d6b149542af8053cf603109d5f291a0792c30",
+  "raw/n8_generic_node_perturbation.npz": "64663c82f953dfcde0d38ea105b977d62ab5949ac860f8de590577b9bdbc4a99",
+  "raw/n8_hidden_vector_oracle.npz": "d2fc440c3f5d76e98f8facc46ecc9f55295d40848a3ecba9a16cae34743ef82d",
+  "raw/n8_outcome_shuffled.npz": "4862a5dd9817dab38964dae29d6bf2c3f063e2fbdf0e3e232f376683089584b4",
+  "statistics.json": "2418c8090e9344ccba4456afa539662ada1e207a2c7ba75fc341a115398b936b",
+  "summary.json": "e96fc4c8b246b6f20b5ab4e6dc745debd046e42958d0f4afc060a2f8eb28f295"
+}

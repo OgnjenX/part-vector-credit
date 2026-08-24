@@ -62,6 +62,11 @@ qualitative sign opposition without supplying neuron-wise errors.
   assumption: where a learned neuron-specific top-down topology comes from. It separates fixed
   repertoire coverage, scalar-outcome selection, ART category plasticity, outstar storage, and
   allowed sequential composition without SMART or a dendritic readout.
+- [EXP005](experiments/exp005/CONCLUSION.md) asks whether Grossberg actually supplies a rule that
+  can construct arbitrary neuron-resolved RSC topology from scalar consequence. Its mandatory
+  [primary-source audit](experiments/exp005/PRIMARY_SOURCE_AUDIT.md) found no complete candidate,
+  so no Grossberg-primary run was manufactured. A separately labeled generic node-perturbation
+  diagnostic tests the missing cellular-credit operation under a frozen protocol.
 
 ## Main finding
 
@@ -145,6 +150,20 @@ coverage strongly predicted behavior, full ART was indistinguishable from a cont
 and final T was almost exactly a copy/compression of the selected response (corr 0.99985), not a
 more role-aligned construction. See the [frozen results](experiments/exp004/RESULTS.md).
 
+## EXP005 finding
+
+EXP005 is **source Outcome E plus a positive generic diagnostic**. The audit found exploration,
+representation-level reinforcement, outstar storage, local SMART plasticity, and structured-error
+motor learning in Grossberg's published systems, but no equation that multiplies a retained
+neuron-local exploratory trace by delayed scalar outcome to learn arbitrary RSC signs. Under the
+separately labeled generic rule, N=32 held-out topology alignment rose from -0.014 initially to
+0.987, then reached 0.964 after hidden remap; outcome shuffling reduced the latter to 0.229, and
+removing exploration or eligibility eliminated learning. This shows scalar reward is sufficient
+in principle given a new three-factor cellular-credit assumption. It does not show that pART,
+SMART, or another Grossberg model already contains that assumption. See the
+[frozen results](experiments/exp005/RESULTS.md) and
+[source classification](experiments/exp005/MECHANISM_CLASSIFICATION.md).
+
 ## Run EXP000
 
 ```bash
@@ -200,6 +219,17 @@ not be rerun; the command is shown only to document the hash-locked interface.
 ```bash
 uv run part-credit-exp004 development --output results/exp004/development_v3
 uv run part-credit-exp004 confirmatory --output results/exp004/frozen_v1
+```
+
+## Run EXP005
+
+EXP005's source audit blocks any Grossberg-primary confirmation. The commands below document the
+separately labeled generic diagnostic. Its `frozen_generic_v1` result is historical and must not
+be rerun.
+
+```bash
+uv run part-credit-exp005 development --output results/exp005/development_v8_final
+uv run part-credit-exp005 confirmatory --output results/exp005/frozen_generic_v1
 ```
 
 EXP000 outputs are written to `results/initial_experiment.json` and `.png`. EXP001
