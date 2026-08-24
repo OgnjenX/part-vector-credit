@@ -51,6 +51,12 @@ At controlled medium coverage, full ART recruited about 10 categories and change
 
 The held-out question is therefore two-sided: category construction could reduce interference, but excessive recruitment could make structural credit harder. “More ART” is not assumed beneficial.
 
+## Frozen held-out result
+
+At controlled medium coverage, full ART recruited 9.94 categories, made 328 prototype modifications, and accumulated prototype change norm 2.43. This confirms genuine category creation/modification. Yet full ART minus contextual-bandit behavior was 0.001 [−0.080, 0.064], and full ART minus fixed-category behavior was 0.046 [−0.050, 0.125]. Neither passed the preregistered category-effect criterion.
+
+The no-new-category condition retained two broad plastic context prototypes and reached behavior 1.000 and T alignment 0.601, exceeding full ART by 0.118 and 0.274 respectively. The likely mechanism is reduced evidence fragmentation across V[k,h] memories, not an absence of learning.
+
 ## Category-dependent T criterion
 
 For every h selected in more than one category, EXP004 measures the normalized distance among the corresponding T vectors. R3 requires both:
@@ -59,3 +65,5 @@ For every h selected in more than one category, EXP004 measures the normalized d
 - a held-out behavioral advantage of at least 0.10 over the contextual-bandit/fixed-category comparison with a seed-bootstrap interval above zero.
 
 Different memory slots alone do not establish factorization if they store the same selected motor response.
+
+Held-out same-h category T distance was 0.0074 [0.0045, 0.0101], and there was no ART advantage over the bandit. R3 category-dependent factorization is therefore not supported.

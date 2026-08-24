@@ -46,6 +46,19 @@ Report:
 
 Outcome contribution and repertoire geometry may both be positive; effects are not forced to sum linearly.
 
+## Frozen estimates
+
+- Controlled coverage→behavior r=0.581; coverage→T r=0.657.
+- HIGH−LOW behavior=0.197 [0.137, 0.255].
+- Fixed-budget primary indirect M→coverage→behavior=0.097 [0.071, 0.125].
+- Search-normalized indirect effect=0.074 [0.053, 0.098].
+- Composition advantage over repeated single=0.313 [0.260, 0.374]; oracle gap=0.020 [0.007, 0.043].
+- Primary−bandit medium behavior=0.001 [−0.080, 0.064].
+- Primary−outcome-shuffled T=0.302 [0.234, 0.368].
+- Generic motor plasticity−low primary behavior=0.070 [0.022, 0.120], below its 0.20 scientific floor.
+
 ## Classifier
 
 The exact implementation in `statistics.py` and thresholds in `FROZEN_PROTOCOL.json` are authoritative. Behavioral and representational flags are separate and may coexist. R4 or failed bank solvability forces A2 non-diagnostic before theoretical interpretation.
+
+The frozen classifier returned B1/B2/B3 true, B4 false; R1 true, R2/R3/R4 false; A2 weak-form support and repertoire limitation true, additional-plasticity requirement false.

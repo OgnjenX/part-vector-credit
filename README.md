@@ -58,6 +58,10 @@ qualitative sign opposition without supplying neuron-wise errors.
   [assumption ledger](experiments/grossberg_francioni_bridge/ASSUMPTION_LEDGER.md) distinguish
   source-derived mechanisms from cross-system composition, generic neurobiology, and genuinely
   new hypotheses. This audit does not alter any frozen experimental classification.
+- [EXP004](experiments/exp004/CONCLUSION.md) prospectively tests the bridge audit's weakest
+  assumption: where a learned neuron-specific top-down topology comes from. It separates fixed
+  repertoire coverage, scalar-outcome selection, ART category plasticity, outstar storage, and
+  allowed sequential composition without SMART or a dendritic readout.
 
 ## Main finding
 
@@ -132,6 +136,15 @@ under-specified rather than shown fundamentally incapable. See the
 [full conclusion](experiments/grossberg_francioni_bridge/CONCLUSION.md) and
 [discriminating predictions](experiments/grossberg_francioni_bridge/DISCRIMINATING_PREDICTIONS.md).
 
+## EXP004 finding
+
+EXP004 finds **weak-form but repertoire-limited A2 support**. Scalar delayed outcome genuinely
+selected useful population responses and determined which samples entered T, and a deliberately
+solvable low-single-coverage task was handled by sequential composition. But controlled initial
+coverage strongly predicted behavior, full ART was indistinguishable from a contextual bandit,
+and final T was almost exactly a copy/compression of the selected response (corr 0.99985), not a
+more role-aligned construction. See the [frozen results](experiments/exp004/RESULTS.md).
+
 ## Run EXP000
 
 ```bash
@@ -177,6 +190,16 @@ command verifies every frozen source/cache hash and refuses to overwrite an outp
 uv run part-credit-exp003b robustness --output results/exp003b/robustness_v1
 uv run part-credit-exp003b development --output results/exp003b/development_v2
 uv run part-credit-exp003b confirmatory --output results/exp003b/frozen_v1
+```
+
+## Run EXP004
+
+EXP004 uses the same uv-managed environment. Its `frozen_v1` confirmation is historical and must
+not be rerun; the command is shown only to document the hash-locked interface.
+
+```bash
+uv run part-credit-exp004 development --output results/exp004/development_v3
+uv run part-credit-exp004 confirmatory --output results/exp004/frozen_v1
 ```
 
 EXP000 outputs are written to `results/initial_experiment.json` and `.png`. EXP001

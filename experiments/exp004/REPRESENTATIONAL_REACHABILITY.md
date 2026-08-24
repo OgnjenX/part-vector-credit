@@ -51,3 +51,9 @@ Two controls distinguish geometry from causal information:
 2. **Frozen-visitation replay:** actual category/h/target visitation is held fixed, episode outcomes are permuted, and T is reconstructed offline. This isolates outcome-dependent scalar weighting from outcome-dependent policy sampling.
 
 A T copied from a lucky B can still embody genuine outcome-driven acquisition if causal outcome determines which B/T pair dominates. That contribution is reported separately from outstar vector construction.
+
+## Frozen held-out result
+
+The replay reconstructed every evaluated T exactly (reported RMSE 0.0). At controlled medium coverage, corr(T, selected-h initial soma)=0.999851 and corr(T, the simple target average)=0.999870. T role alignment was 0.298 below the best initial pattern and 0.0325 below the best individual target. Same-h category T distance was 0.0074.
+
+Online outcome shuffling reduced T alignment by 0.302 [0.234, 0.368], proving that causal outcome shaped which representation dominated. With the actual visitation/targets frozen, permuting outcomes changed T alignment by only −0.000041 on average. Thus the neuron-specific coordinates came from the selected response; scalar outcome supplied information mainly by changing selection and occupancy; outstar supplied stable within-pair compression. This is R1, not R2/R3/R4.

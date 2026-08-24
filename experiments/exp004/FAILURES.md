@@ -33,3 +33,7 @@ The generic scalar reward-gated perturbation control changed its motor bank by n
 | 8.00 | 0.125 | 0.763 | 2.260 |
 
 Rate 4.0 was frozen for the secondary generic control because it maximized development success before degradation at 8.0. The per-update displacement remains scaled by the small executed perturbation, eligibility, and scalar advantage. This rate does not affect the fixed-repertoire primary or any ART/outstar rule.
+
+## Held-out confirmation
+
+The single `frozen_v1` run completed all 58 scenarios without a runtime or integrity failure. Scientifically, full ART failed to beat the contextual bandit, category proliferation was inferior to the no-recruitment condition, R2/R3 construction criteria failed, and the generic motor-plasticity extension missed its frozen 0.20 effect floor. These negative results were retained without repair or rerun.

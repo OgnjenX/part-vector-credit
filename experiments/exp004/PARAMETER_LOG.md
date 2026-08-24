@@ -38,3 +38,7 @@ All changes below used development seeds only. No held-out result has been viewe
 | explicit vector-control rate | 0.18 |
 
 Development v2 fixed the calibration choices. Development v3 is the source-matched, compact-archive rerun used for freezing; its scientific results are identical to v2. No final criterion was lowered in response to weak performance.
+
+## Confirmation
+
+The protocol and source hashes were pushed at `a1d8aee`. `frozen_v1` then ran once on seeds 7000–7015 with the values above. There were no post-freeze parameter changes and no rerun.

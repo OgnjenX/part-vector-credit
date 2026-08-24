@@ -1,5 +1,7 @@
 # EXP004 data dictionary
 
+The public `frozen_v1/raw/*.npz` archives are stored with Git LFS because the complete immutable held-out trace is about 565 MB. Their filenames, bytes, and SHA-256 values are unchanged from the one-time canonical run; LFS is transport/storage only.
+
 Each run directory contains `summary.json`, `statistics.json`, figures, hashes, and one compressed NPZ per scenario. Within an NPZ, every key is prefixed `seed_<seed>__`; variable-length event histories therefore remain lossless without padding across seeds.
 
 ## Initialization and oracle arrays
