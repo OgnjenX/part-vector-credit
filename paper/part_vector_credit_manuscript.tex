@@ -3,6 +3,9 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{flafter}
+\usepackage{placeins}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{amsmath,amssymb}
@@ -11,125 +14,186 @@
 \usepackage{enumitem}
 \setlist{nosep}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
-\title{From Representation Credit to Cellular Credit: A Chronological Audit of pART-Inspired Models of Dendritic Vectorization}
-\author{Repository-based research manuscript\\\small Based on the \texttt{OgnjenX/part-vector-credit} experimental record}
-\date{15 September 2026}
+
+\title{From Representation Credit to Cellular Credit:\\Testing pART-Inspired Models of Dendritic Credit Assignment}
+\author{Ognjen \v{C}adovski\\
+\small Independent research project\\
+\small \texttt{ognjen.cadovski@robbit.rs}}
+\date{September 2026}
+
 \begin{document}
 \maketitle
 
 \begin{abstract}
-How can a delayed scalar behavioral outcome support the cell-specific changes required for a brain--computer interface (BCI) in which intermingled cortical neurons have opposite causal roles? This manuscript reports a chronological analysis of the \texttt{part-vector-credit} repository. The work was motivated by dendritic signals reported during BCI learning by Francioni et al.\ \citep{francioni2026} and asks whether pART/SMART-inspired mechanisms can account for such signals without an explicit neuron-wise error vector. Repository-derived results are separated throughout from claims about published theory and biology. A prestructured opponent-code routing study (EXP000) showed only that an existing pattern can be selectively expressed. Random-repertoire causal selection, learned top-down expectancy, and an integrated pART--SMART composition (EXP001--EXP003b) established that delayed scalar reinforcement can select useful distributed hypotheses, maintain them across delay, and learn or remap patterned expectations, but did not meet the frozen longitudinal dendritic criterion. A topology-origin study (EXP004) showed that the learned expectation was principally a compression of outcome-selected responses from a fixed repertoire, not construction of arbitrary cellular topology. A source audit and generic local-eligibility diagnostic (EXP005) found no published Grossberg equation that performs the missing operation. The separately labeled generic three-factor comparator nevertheless learned arbitrary hidden sign maps (at $N=32$, alignment 0.987 after acquisition and 0.964 after remapping). Thus scalar outcome is computationally sufficient in this abstract task when coupled to a local eligibility trace; the repository does not establish that the brain uses that rule, that Grossberg's published theory contains it, or that Francioni's dendritic signal is an error gradient.
+A delayed behavioral outcome can reinforce an action, but it does not directly specify how individual neurons with opposing causal roles should change. We examined this distinction in a sequence of abstract closed-loop brain--computer interface simulations motivated by role-dependent dendritic signals reported by Francioni et al.\ \citep{francioni2026}. The studies progressively tested selective routing of an existing opponent pattern, scalar reinforcement of hypotheses drawn from a random repertoire, learned top-down expectations, and a local SMART-inspired plasticity motif. Scalar reinforcement reliably selected useful distributed representations, maintained them across delay, and supported remapping. The integrated theory-led models, however, did not satisfy a preregistered longitudinal criterion linking an early dendritic residual to later synaptic and somatic change. Further analysis showed that learned top-down topology was almost exactly inherited from outcome-selected activity in a fixed repertoire. A separate, explicitly non-Grossberg comparator combined common scalar advantage with cell-local exploratory eligibility. It learned arbitrary hidden sign maps and relearned them after remapping; at population size $N=32$, alignment was 0.987 after acquisition and 0.964 after remapping. These results distinguish two computational claims. Scalar outcome is sufficient for representation-level credit in the tested pART-inspired models, and it is sufficient for arbitrary cellular credit when an additional local eligibility trace is supplied. The simulations do not establish that this eligibility rule is implemented biologically or contained in published Grossberg theory.
 \end{abstract}
 
 \section{Introduction}
-Neural learning faces both a temporal and a structural credit-assignment problem: a consequence may arrive after the relevant action, and many simultaneously active cells may have different causal contributions. In a BCI preparation, Francioni et al. reported role-dependent dendritic signals in intermingled cortical neurons and interpreted them as vectorized instructive signals \citep{francioni2026}. A literal reading invites a neuron-indexed teaching vector. An alternative is that common scalar outcome can interact with local state, history, or eligibility to produce cell-specific updates.
+Neural learning faces two related credit-assignment problems. A consequence may arrive after the action that caused it, creating a temporal problem, and simultaneously active neurons may contribute differently to that consequence, creating a structural problem. The second difficulty is especially clear in brain--computer interface (BCI) tasks in which intermingled cortical cells have opposite causal roles. Francioni et al. reported role-dependent dendritic signals during such learning and interpreted them as vectorized instructive signals \citep{francioni2026}. One possible mechanism would compute a neuron-indexed teaching vector. Another would broadcast only a scalar outcome and allow local state or recent history to determine the sign of each update.
 
-The repository studied here tested this alternative at progressively stronger levels. It began with a routing sanity check, removed prewired identity shortcuts, introduced learned top-down expectations, validated a local SMART-derived plasticity motif, audited the source theory, tested whether learned expectations synthesize new topology, and finally ran a generic local-eligibility diagnostic. The central question is deliberately narrow: \emph{which claims are supported by the implemented experiments, and which remain hypotheses about biology?}
+pART, ART, and SMART offer components that make the second possibility worth testing. They provide mechanisms for category selection, maintenance across delay, learned expectations, matched feedback, and local plasticity. None of those components alone resolves the key information question: where does an arbitrary cell-specific sign pattern originate when the environment returns only a scalar result?
 
-\section{Related work and theoretical commitments}
-ART addresses stability--plasticity through category matching, vigilance, reset/search, and learned top-down expectations \citep{carpenter1987}. pART emphasizes structural and temporal credit: a representation can be selected, maintained over a delay, and reinforced by broad motivational signals \citep{grossberg2018}. These mechanisms naturally motivate representation-level credit, but do not by themselves specify an arbitrary neuron-resolved BCI feedback vector.
+We addressed that question through a cumulative computational program. Each study removed a shortcut or supplied a mechanism left unresolved by the preceding one. Selective routing was tested first as an existence proof. Hidden cellular identity was then removed by introducing a random repertoire; learned top-down expectations replaced copied patterns; a reduced local plasticity motif was tested before integration; and the origin of the learned topology was finally isolated. When the theory-led sequence did not construct arbitrary cellular topology, a source audit was followed by a generic local-eligibility diagnostic. This order matters because a successful behavior does not by itself identify the level at which credit was assigned.
 
-SMART supplies a more cellular circuit motif. In a visual thalamocortical setting, learned higher-to-lower feedback reaches apical dendrites, a match-dependent on-center/off-surround circuit changes timing and participation, and a local voltage/conductance-gated rule changes synapses \citep{grossbergversace2008}. Canonical laminar extensions describe related modulatory feedback motifs \citep{grossberg2021}. These sources support a chain from matched feedback to local plasticity, not a demonstrated mapping from delayed BCI reward to arbitrary intermingled P+/P- roles. Grossberg's vector associative motor systems use an available target-versus-present difference vector \citep{gaudiano1991}; importing that vector would change the information boundary of the present task.
+The contribution is therefore both computational and methodological. The experiments separate representation selection from cellular sign learning, evaluate a prospective dendrite-to-synapse-to-soma criterion, and identify the additional information that made the generic cellular solution possible. All numerical results and figures come from the archived repository record; claims about published theory and biology are supported separately by external citations.
 
-Three alternatives should therefore remain distinct. First, a centralized system might compute and route an explicit cell-wise error. Second, a representation-level system can select one useful pre-existing distributed pattern. Third, a local exploratory rule could use the same scalar advantage at every cell but multiply it by a cell-specific eligibility. Only the third can construct arbitrary signs in the present abstraction without a supplied vector, and it is not attributed to Grossberg in this manuscript.
+\section{Related work}
+ART addresses stability--plasticity through category matching, vigilance, reset/search, and learned top-down expectations \citep{carpenter1987}. pART emphasizes structural and temporal credit: a representation can be selected, maintained over a delay, and reinforced by broad motivational signals \citep{grossberg2018}. These mechanisms motivate representation-level credit but do not, by themselves, specify an arbitrary neuron-resolved feedback vector.
 
-\section{Methods: common task, information boundary, and adjudication}
-The experiments use abstract closed-loop BCI tasks with hidden, balanced causal roles $c_i\in\{-1,+1\}$ assigned to intermingled cells. The learner receives observable context/state, its own activity and local variables, and scalar outcome; $c$ is environment-only except in explicitly labeled oracle controls and offline analysis. Primary endpoints include BCI performance, correlation/alignment of learned patterns with $c$, remapping after an independently changed hidden map, and interventions that remove proposed causal ingredients.
+SMART supplies a more cellular circuit motif. In a visual thalamocortical setting, learned higher-to-lower feedback reaches apical dendrites, a match-dependent on-center/off-surround circuit changes timing and participation, and a local voltage/conductance-gated rule changes synapses \citep{grossbergversace2008}. Canonical laminar extensions describe related modulatory feedback motifs \citep{grossberg2021}. Grossberg's vector associative motor systems address a different information boundary: they use an available target-versus-present difference vector \citep{gaudiano1991}. Importing such a vector into the present task would assume the neuron-specific information that the simulations are intended to explain.
 
-The theory-led models distinguish a selected category--hypothesis representation $H_{k,h}$, a learned expectation $T_{k,h,i}$, a modeled top-down/apical quantity $D_i$, plastic lower weights $W_i$, and somatic output $S_i$. Their intended longitudinal test is
+Three computational accounts must consequently be distinguished. A centralized system may compute and route a cell-wise error. A representation-level system may reinforce one useful distributed pattern already present in a repertoire. A local exploratory system may instead multiply a common scalar advantage by a cell-specific eligibility trace. The experiments below test the latter two possibilities without treating them as equivalent.
+
+\section{Methods}
+\subsection{Task and information boundary}
+The experiments use abstract closed-loop BCI tasks with hidden, balanced causal roles $c_i\in\{-1,+1\}$ assigned to intermingled cells. The learner observes context or state, its own activity, permitted local variables, and scalar outcome. The role vector $c$ remains environment-only except in explicitly labeled positive controls and offline analyses. Primary endpoints include task performance, correlation or alignment of learned patterns with $c$, recovery after an independently changed hidden map, and changes under interventions that remove proposed causal ingredients.
+
+The theory-led models distinguish a selected category--hypothesis representation $H_{k,h}$, a learned expectation $T_{k,h,i}$, a modeled top-down or apical quantity $D_i$, plastic lower weights $W_i$, and somatic output $S_i$. Their prospective longitudinal test is
 \begin{equation}
  D^{\mathrm{early}}_{\mathrm{residual},i}\;\longrightarrow\;\Delta W_i\;\longrightarrow\;\Delta S_i,
 \end{equation}
-evaluated within a held hypothesis so that simple switching cannot create a spurious effect. SMART-derived models implement the qualitative local dependency
+evaluated within a held hypothesis so that switching between patterns cannot create an apparent effect.
+
+SMART-derived models implement the qualitative local dependency
 \begin{equation}
  \Delta W_{jk}\propto f_G(V_k,\bar g_{jk})\left[\bar g_{jk}f_N(V_k)(\widehat w-\check w)+w_0-w_{jk}\right],
 \end{equation}
-where conductance, voltage, and spike timing determine local change \citep{grossbergversace2008}. This is not a reward-times-neuron-vector rule.
-
-The intentionally non-Grossberg local-eligibility diagnostic (EXP005) instead updates an adaptive cell-wise projection using
+where conductance, voltage, and spike timing determine local change \citep{grossbergversace2008}. The generic local-eligibility comparator uses a different update,
 \begin{equation}
  \Delta A_i=\eta_N(R-b)e_i,
 \end{equation}
-where $R-b$ is a common scalar reward advantage, $e_i$ is a retained local exploratory perturbation eligibility, and $\eta_N$ corrects the known population-mean scaling. The hidden roles do not enter this update. Exact replay of legal variables was an explicit audit endpoint.
+where $R-b$ is a common scalar reward advantage, $e_i$ is a retained local exploratory perturbation, and $\eta_N$ corrects known population-mean scaling. Hidden roles do not enter this update.
 
-The repository uses frozen held-out seed sets, preregistered effect floors in later experiments, seed-level bootstrap intervals, positive controls supplied with hidden vector information, and ablations such as shuffled outcome, removed exploration, or removed eligibility. These choices make the reported claims conditional on the specified abstractions rather than claims of biological necessity.
+\subsection{Experimental sequence and reproducibility}
+Later studies used frozen held-out seed sets, preregistered effect floors, seed-level bootstrap intervals, explicit positive controls supplied with hidden vector information, and causal ablations such as shuffled outcome, removed exploration, or removed eligibility. Table~\ref{tab:registry} provides the only manuscript-level crosswalk to the repository's internal identifiers. The Results retain this chronology but use scientific study names in the narrative.
 
-\section{Results in experimental chronology}
-\begin{table}[t]
+\begin{table}[tbp]
 \centering\small
-\begin{tabular}{L{0.11\linewidth}L{0.31\linewidth}L{0.45\linewidth}}
+\begin{tabular}{L{0.13\linewidth}L{0.31\linewidth}L{0.44\linewidth}}
 \toprule
-Repository ID & Paper-facing study name & Repository classification \\
+Registry ID & Study & Evidential role \\
 \midrule
-EXP000 & Prestructured opponent-code routing & Routing sanity check; not de novo cellular credit. \\
-EXP001 & Random-repertoire causal selection & Representation selection, not discovery of cell signs. \\
-EXP002 & Learned top-down expectancy & Outcome C for the tested composition. \\
-EXP003--3b & SMART motif and integrated pART--SMART composition & Motif validated; integrated frozen composition Outcome C. \\
-EXP004 & Origin of neuron-specific topology & Weak-form support only; fixed-repertoire limited. \\
-EXP005 & Source audit and local-eligibility diagnostic & Source outcome E; generic diagnostic positive. \\
+EXP000 & Prestructured opponent-code routing & Existence proof for routing an already available pattern. \\
+EXP001 & Random-repertoire selection & Scalar selection and delayed credit at the representation level. \\
+EXP002 & Learned top-down expectancy & Test of whether a learned expectation supplies the longitudinal cellular signal. \\
+EXP003--EXP003b & SMART motif and integrated composition & Local mechanism validation followed by a prospective integrated test. \\
+EXP004 & Origin of learned topology & Test of construction versus inheritance from fixed repertoire geometry. \\
+EXP005 & Source audit and local eligibility & Source-boundary audit followed by a generic cellular-credit diagnostic. \\
 \bottomrule
 \end{tabular}
-\caption{Chronology and claim boundary. ``Outcome C'' and ``E'' are the repository's classifications, not broad falsifications of theories.}
+\caption{Crosswalk between repository identifiers and the scientific studies described in the manuscript.}
+\label{tab:registry}
 \end{table}
 
-\subsection{Prestructured opponent-code routing (EXP000)}
-After two retained failed calibrations, the corrected routing study achieved late accuracy 0.978 across 30 seeds, with P+ modulation $+0.673$, P- modulation $-0.673$, and opposition index $+1.346$. Yet the audit identified a decisive shortcut: hidden P+/P- identity was visible in even/odd indices and already encoded in category templates. A frozen-template reanalysis with category and value learning rates set to zero retained 0.978 late accuracy. Ordinary corrected trials also had 100\% resonance and no resets. The routing study therefore supports only an existence claim: selective feedback can route a \emph{pre-existing} opponent pattern without an explicit error vector. It neither learned the signs nor validated reset/search under frequent mismatch.
+\subsection{Claim boundaries}
+Quantitative statements labeled as results are derived from committed protocols, frozen analyses, held-out records, or explicitly identified post-hoc audits in the project repository \citep{pvcRepo}. No new simulations were conducted for this manuscript. The prestructured study tests routing, not de novo sign learning. Conclusions from theory-led studies apply to the implemented compositions and endpoints rather than to all ART, pART, or SMART models. The local-eligibility comparator is a generic three-factor rule and is not attributed to Grossberg. Biological interpretations remain hypotheses unless supported by the cited experimental literature.
 
-\subsection{Random-repertoire causal selection (EXP001)}
-The random-repertoire study removed visible population identity and used a random hypothesis bank. The selected distributed hypothesis could be held across irrelevant events, credited by delayed scalar outcome, and relearned after hidden roles changed. This demonstrates structural and temporal credit at the level of selecting a representation. Its limit was equally clear: the useful direction already occurred by chance in the bank; increasing bank capacity increased the probability of a well-aligned direction. Instantaneous dendritic residual alignment also appeared in non-learning controls and did not reliably predict later cell-specific activity change. The explicit neuron-indexed positive control did. Thus the experiment learned \emph{which pattern works}, not which individual cells ought to change sign.
+\subsection{Theoretical bridge audit}
+A source audit mapped representation selection and maintenance to pART, expectation learning and match/reset to ART, apical feedback and timing-dependent local plasticity to SMART, and the dendritic observation statistic to Francioni et al. The weakest bridge was acquisition of arbitrary neuron-fine $H\rightarrow T$ topology from scalar outcome. Two additional assumptions remained outside the cited theories: mapping the SMART surround to NDNF-sensitive dendritic signals, and mapping modeled current or voltage to a soma-conditioned calcium residual. These gaps determined the later topology and local-eligibility tests.
 
-\subsection{Learned top-down expectancy (EXP002)}
-The learned-expectancy study added a Grossberg outstar-derived association, $T_h\leftarrow T_h+\eta(S_{\sim}-T_h)$, to store soma patterns recurrently coactive with selected hypotheses. On frozen data, scalar selection learned behavior (0.528 before and 0.397 after remapping) and role-aligned top-down patterns (0.343 and 0.287). However, direct copying of the chosen pattern produced essentially the same alignment, a contextual bandit matched behavior, and the pre/post-remap longitudinal residual effects were $-0.326$ and $-0.016$. The explicit neuron-indexed control gave 0.660/0.545. Suppressing apical learning erased learned pattern alignment without changing behavior. The tested selection-plus-pattern-completion account therefore failed the requested cellular longitudinal criterion; it does not show that all Grossberg circuits fail.
+\FloatBarrier
+\section{Results}
+\subsection{Prestructured opponent-code routing}
+The first study corresponds to registry record EXP000. After two retained calibration attempts, the corrected model achieved late accuracy 0.978 across 30 seeds, with P+ modulation $+0.673$, P- modulation $-0.673$, and an opposition index of $+1.346$ (Figure~\ref{fig:routing}). Selective feedback could therefore express a strong opponent pattern without receiving an explicit vector error on each trial.
 
-\subsection{SMART motif and integrated pART--SMART composition (EXP003a--b)}
-The local-mechanism program began with a theory audit (EXP003), not a simulation result. It found that SMART provides a defensible source-derived local arrow: supplied matched feedback can alter spike timing, gate local plasticity, and change future response. The reduced SMART-motif study (EXP003a) reported an update increase from 0.600 to 0.731 and a learning-off feedforward probe changing from 0 to 7 of 8 spikes. Competitor, top-down-ablated, and mismatch conditions had zero update. This validates a narrow local mechanism, not a full SMART reproduction or behavioral credit solution.
+The same result exposed the study's structural shortcut. P+/P- identity was recoverable from even and odd neuron indices and was already encoded in category templates. Freezing category and value learning left late accuracy unchanged at 0.978, while ordinary corrected trials showed 100\% resonance and no resets. The result established routing of an existing pattern, but it left open how a useful pattern could be found when cellular identity was hidden. That question motivated the random-repertoire study.
 
-The integrated composition (EXP003b) combined the locked motif with delayed structural credit and learned expectations. Across 12 held-out mappings, useful remappable expectations emerged and top-down feedback advanced local spike timing by 6.29 ms, changing lower weights. Nevertheless, early soma-conditioned dendritic residuals did not predict lower-weight or held-hypothesis somatic change at the frozen decision threshold; only the explicitly neuron-wise positive control completed the $D\rightarrow W\rightarrow S$ assay. Post-hoc failure localization did not alter this outcome. It found that raw $T$ and more direct modeled quantities predicted sparse $\Delta W$, whereas the soma-conditioned residual lost much of that information. For example, raw $T\rightarrow\Delta W$ correlation was 0.416 [0.290, 0.530], but residual $D\rightarrow\Delta W$ was $-0.004$ [$-0.141$, 0.128]. Sparse, quantized engagement prevents reclassifying this as confirmatory success.
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\linewidth]{../results/initial_experiment.png}
+\caption{Repository-derived summary of prestructured routing. Late-task accuracy remains high under several ablations because the opponent pattern is already present in the model; shuffled feedback disrupts P+/P- modulation, while the explicit vector control serves as a positive control.}
+\label{fig:routing}
+\end{figure}
 
-\subsection{Bridge audit}
-The repository's bridge audit separates explicit source content from new assumptions. It attributes representation selection/maintenance to pART, expectation learning and match/reset to ART, apical feedback and timing-dependent local plasticity to SMART, and the BCI dendritic statistic to Francioni et al. It identifies the weakest missing arrow as acquisition of arbitrary neuron-fine $H\rightarrow T$ topology from scalar outcome (assumption A2). It also flags unproven mapping of SMART surround to NDNF-sensitive dendritic signals and the observation model from current/voltage to calcium residual. These are productive hypotheses, not settled source-derived consequences.
+\subsection{Random-repertoire selection}
+The next study (EXP001) removed visible population identity and replaced the opponent template with a random hypothesis bank. Scalar outcome selected useful distributed hypotheses, maintained them across irrelevant events, and supported relearning after the hidden roles changed. The confirmatory comparison also showed that post-remap success depended strongly on the available repertoire and that the best initial alignment increased with bank capacity (Figure~\ref{fig:repertoire}).
 
-\subsection{Origin of neuron-specific topology (EXP004)}
-The topology-origin study prospectively tested the origin of $T$ using 16 held-out seeds and 58 frozen scenarios. At fixed bank size $M=16$, controlled low/medium/high initial coverage produced primary behavior 0.765/0.882/0.962 and $T$ alignment 0.258/0.327/0.395; high-minus-low behavior was 0.197 [0.137, 0.255]. Across random banks, candidate coverage increased with $M$, but learning became search-limited. A specially constructed sequential condition did show behavioral composition: primary behavior 0.980 exceeded the best repeated-single action by 0.313 [0.260, 0.374], yet a contextual bandit achieved 0.977.
+This capacity dependence located the achievement at the representation level. A useful direction had to occur in the bank before reinforcement could select it. Instantaneous dendritic-residual alignment also appeared in non-learning controls and did not reliably predict later cell-specific activity change, whereas a neuron-indexed positive control did. The model could learn which available pattern worked, but not independently infer the sign required at each cell. A learned expectation was introduced next to test whether repeated outcome-selected activity could generate that missing signal.
 
-The representational result was decisive for the implemented rule:
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\linewidth]{../results/exp001/frozen_v1/exp001_confirmatory.png}
+\caption{Frozen random-repertoire comparison. Left: post-remap success by condition. Center: soma-conditioned residual alignment. Right: success and the best initial role alignment as hypothesis-bank capacity increases. The capacity relation is consistent with selection from a fixed repertoire rather than de novo cellular sign discovery.}
+\label{fig:repertoire}
+\end{figure}
+
+\subsection{Learned top-down expectancy}
+The learned-expectancy study (EXP002) added a Grossberg outstar-derived association,
+\begin{equation}
+T_h\leftarrow T_h+\eta(S_{\sim}-T_h),
+\end{equation}
+to store somatic patterns repeatedly coactive with selected hypotheses. On frozen data, the primary model reached behavioral scores of 0.528 before and 0.397 after remapping, while top-down role alignment reached 0.343 and 0.287. The expectation was therefore learned and remappable.
+
+Behavior alone did not distinguish this mechanism from simpler alternatives. Directly copying the chosen pattern produced similar alignment, and a contextual bandit matched behavior. More importantly, the pre- and post-remap longitudinal residual effects were $-0.326$ and $-0.016$, compared with 0.660 and 0.545 for the neuron-indexed control. Suppressing expectation learning removed learned pattern alignment without materially changing behavior. These results shifted the question from whether an expectation could be stored to whether supplied feedback could drive a local plasticity mechanism and later alter somatic output.
+
+\subsection{From a SMART motif to an integrated composition}
+The local-mechanism program began with a source audit (EXP003) and a reduced SMART-inspired motif (EXP003a). Supplied matched feedback altered spike timing, gated local plasticity, and changed a later feedforward response. The modeled update increased from 0.600 to 0.731, and a learning-off probe changed from 0 to 7 of 8 spikes. Competitor, top-down-ablated, and mismatch conditions produced no update. This isolated the local arrow from matched feedback to plasticity without yet solving behavioral credit assignment.
+
+The integrated composition (EXP003b) then combined the motif with delayed structural credit and learned expectations. Across 12 held-out mappings, feedback advanced local spike timing by 6.29 ms and changed lower weights. The causal contrast disappeared when SMART input, learned expectation, or local learning was removed. Nevertheless, the prospective longitudinal endpoint was not met: early soma-conditioned dendritic residuals did not predict lower-weight or held-hypothesis somatic change at the frozen threshold, while the neuron-wise positive control completed the chain.
+
+An explicitly post-hoc failure localization found that the learned expectation $T$ and quantities closer to the plasticity rule predicted sparse $\Delta W$, whereas the soma-conditioned residual discarded much of that information. Raw $T\rightarrow\Delta W$ correlation was 0.416 [0.290, 0.530], but residual $D\rightarrow\Delta W$ correlation was $-0.004$ [$-0.141$, 0.128]. The integrated result therefore redirected the program toward the origin of the expectation topology and the adequacy of the observation model.
+
+\subsection{Origin of neuron-specific topology}
+The topology-origin study (EXP004) prospectively varied the best role coverage available in a fixed bank. At bank size $M=16$, low, medium, and high initial coverage produced behavioral scores of 0.765, 0.882, and 0.962 and learned-$T$ alignments of 0.258, 0.327, and 0.395 (Figure~\ref{fig:topology}). The high-minus-low behavioral difference was 0.197 [0.137, 0.255]. Across random banks, candidate coverage increased with $M$, although larger banks also made search more difficult.
+
+A constructed sequential condition demonstrated behavioral composition: performance reached 0.980 and exceeded the best repeated-single action by 0.313 [0.260, 0.374]. A contextual bandit, however, reached 0.977. More decisively, the learned expectation was almost identical to experienced activity:
 \begin{equation}
 \mathrm{corr}(T,\text{selected initial soma})=0.999851,\qquad
 \mathrm{corr}(T,\text{mean target})=0.999870.
 \end{equation}
-Exact replay reconstructed $T$ with RMSE 0.0. $T$ did not exceed the best individual experienced target. Outcome permutation changed topology by altering which hypotheses and targets were visited, not materially by reweighting a fixed visitation history. Hence scalar outcome genuinely selects and consolidates distributed states, but the neuron coordinates arise mainly from fixed repertoire geometry. This is weak-form A2 support, not arbitrary topology construction.
+Exact replay reconstructed $T$ with RMSE 0.0, and $T$ did not surpass the best individual experienced target. Outcome permutation altered topology mainly by changing which hypotheses and targets were visited. Thus the implemented outstar consolidated outcome-selected states, while their neuron coordinates came primarily from fixed repertoire geometry. This finding made the missing operation precise: arbitrary cellular topology required a cell-varying quantity that was not already embedded in a candidate pattern.
 
-\subsection{Source audit and local-eligibility diagnostic (EXP005)}
-The source audit first imposed a gate: no Grossberg primary run would be invented if no audited source supplied the required operation. It classified the source result as E: pART, ART/outstar, exploration, SMART, and vector motor systems each supply adjacent functions, but no equation joined an independent local exploratory trace to delayed scalar consequence to learn arbitrary intermingled signs.
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\linewidth]{../results/exp004/frozen_v1/figures/controlled_coverage.png}
+\caption{Frozen controlled-coverage result. Both final behavior (left) and alignment of the learned top-down expectation $T$ with hidden roles (right) increase with the quality of topology already available in the bank. The contextual-bandit comparison follows the same trend.}
+\label{fig:topology}
+\end{figure}
 
-The separately labeled generic comparator then tested that missing operation. On 16 held-out maps, after 1,280 acquisition episodes and 2,560 remap episodes, final role alignment was 0.997, 0.993, 0.987, and 0.972 for $N=8,16,32,64$; post-remap alignment was 0.968, 0.960, 0.964, and 0.950. At $N=32$, shuffled outcome reduced post-remap alignment to 0.229, while no plasticity, no temporal eligibility, and no exploration left alignment near zero; generic-minus-shuffled was 0.735 [0.655, 0.820]. Changed-cell sign reversal was perfect through $N=32$ and 0.975 at $N=64$. Legal replay reconstructed updates to numerical precision. During acquisition, final topology exceeded the best single exploratory sample at every $N$, supporting accumulation rather than lucky fixed-pattern selection.
+\subsection{Source audit and a local-eligibility diagnostic}
+The final source audit (EXP005) asked whether a published Grossberg equation supplied the missing operation. pART, ART/outstar learning, exploration, SMART, and vector motor systems each supplied adjacent functions, but the audit found no source-derived rule that joined an independent local exploratory trace to delayed scalar consequence in order to learn arbitrary intermingled signs. A new Grossberg primary model was therefore not constructed.
 
-These results support a computational statement: common scalar advantage plus private local exploratory eligibility can identify arbitrary cellular topology in this abstract task. They do not convert the generic rule into a published Grossberg mechanism, identify a neuronal implementation, or establish the interpretation of dendritic calcium signals.
+A separately labeled generic comparator tested the computational sufficiency of that additional operation. On 16 held-out maps, after 1,280 acquisition episodes and 2,560 remap episodes, alignment was 0.997, 0.993, 0.987, and 0.972 for $N=8,16,32,64$; post-remap alignment was 0.968, 0.960, 0.964, and 0.950. At $N=32$, the learning trajectory rose rapidly during acquisition and recovered after an independent hidden remap (Figure~\ref{fig:eligibility}). Shuffling outcome reduced post-remap alignment to 0.229. Removing plasticity, temporal eligibility, or exploration left alignment near zero, and generic-minus-shuffled alignment was 0.735 [0.655, 0.820]. Changed-cell sign reversal was perfect through $N=32$ and 0.975 at $N=64$.
+
+Exact replay reconstructed the updates to numerical precision, confirming that no hidden role information entered the learner. Final topology also exceeded the best single exploratory sample at every population size, showing accumulation rather than selection of one lucky perturbation. The decisive difference from the preceding models was not a richer scalar reward. It was the private eligibility $e_i$, which supplied the cell-varying factor needed to turn a common scalar advantage into different local updates.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.94\linewidth]{../results/exp005/frozen_generic_v1/figures/n32_acquisition_trajectory.png}
+\caption{Frozen generic local-eligibility diagnostic at $N=32$. The role alignment learned from scalar outcome and local perturbation eligibility rises during acquisition, drops when the hidden map changes, and is relearned. Shuffled outcome learns only weak alignment, while removing exploration eliminates learning.}
+\label{fig:eligibility}
+\end{figure}
 
 \section{Discussion}
-The experiments sharpen a useful distinction. Representation-level credit is comparatively easy: a scalar consequence can reinforce a maintained hypothesis and select useful patterns from a repertoire. Cellular credit is harder because it requires a cell-varying quantity. Across the studies of random repertoire selection, learned expectancy, integrated composition, and topology origin (EXP001--EXP004), that quantity was largely supplied by existing population geometry and stored by selection/outstar-like averaging. In the local-eligibility diagnostic (EXP005), it arose from each cell's own perturbation eligibility; the scalar reward only determined whether that private deviation was reinforced or opposed.
+The sequence separates two levels of credit that can otherwise look similar in successful behavior. Scalar reinforcement was sufficient to select and maintain useful distributed representations. It also supported learned expectations and remapping. Yet the neuron-specific structure expressed by those models was largely inherited from the repertoire of patterns that could be selected. Pattern selection answers ``which available representation worked?''; it does not necessarily answer ``which individual cells should change sign?''
 
-The result does not require a central vector-error broadcaster in principle. But ``not mathematically necessary'' is not evidence that biology implements node perturbation. A dendritic signal that looks neuron-specific could reflect explicit routed instruction, locally computed credit, selected expectation, match gating, or a mixture. The failed frozen longitudinal residual test and its post-hoc localization further show that an observation model can obscure information present in currents or timing, especially in sparse regimes. That is a measurement issue to test prospectively, not a license to rescue a failed confirmatory endpoint.
+The generic comparator supplied a concrete answer to the second question. Every cell received the same advantage signal, but each combined it with a private memory of its own recent perturbation. Repeated trials accumulated those locally signed correlations into an arbitrary hidden topology. This demonstrates that a centrally routed vector error is not mathematically necessary for the abstract task. It does not determine whether biological learning uses perturbation eligibility, explicit routed instruction, matched expectation, or a mixture of these mechanisms.
+
+The integrated-model results also expose a measurement problem. Information present in a learned expectation, current, or spike-timing variable need not survive conversion to a sparse soma-conditioned calcium residual. The post-hoc localization is useful because it identifies where information was lost, but it cannot retroactively satisfy the failed prospective endpoint. A future biological or computational test should therefore preregister both the candidate causal variable and the observation model that maps it to the measured dendritic signal.
+
+More broadly, the source audit prevents architectural resemblance from being mistaken for derivation. pART and SMART motivate a plausible route from selected representations to local plasticity. The exploratory eligibility rule supplies a computationally effective missing operation, but it is an added hypothesis. The most productive synthesis is therefore modular: published theory contributes representation selection, expectation, matching, and local plasticity motifs; cellular exploratory credit remains a distinct mechanism to test.
 
 \section{Limitations}
-The models are abstract BCI simulations, not reconstructions of RSC circuitry, animal behavior, or full pART/SMART equations. Several key bridges are engineering extrapolations: binding a pART-selected representation to a SMART-like projection, targeting the relevant BCI cells, mapping center/surround to NDNF circuitry, and mapping modeled activity to a soma-conditioned calcium residual. The prestructured routing study (EXP000) is structurally favored and should never be used as de novo credit evidence. The integrated composition (EXP003b) used sparse, quantized local plasticity; post-hoc analyses are diagnostic only. The topology-origin study (EXP004) establishes fixed-repertoire dependence only for its specified bank and outstar ownership rule. The local-eligibility diagnostic's scaling correction (EXP005) is known-task normalization, not role information, but finite-task success remains distinct from biological scalability. Finally, repository provenance includes companion worktree/branch records for EXP004--EXP005; readers should verify hashes and source history before treating the synthesis as a formal release.
+The tasks are abstract simulations rather than reconstructions of retrosplenial circuitry, animal behavior, or complete pART and SMART equations. Binding a pART-selected representation to a SMART-like projection, targeting relevant BCI cells, mapping center/surround organization onto NDNF circuitry, and converting modeled activity into a calcium residual all require additional biological assumptions. The prestructured routing model is structurally favored, and the random-repertoire and outstar studies remain tied to their specified banks and ownership rules.
+
+The integrated composition used sparse, quantized local plasticity. Its post-hoc analyses diagnose a failure but do not change the frozen classification. The local-eligibility comparator uses a known population-scaling correction; this carries no role information, yet success in a finite normalized task does not establish biological scalability. Finally, the manuscript is a synthesis of archived computational records, not an independent reproduction or peer review of either the simulations or the motivating animal experiment.
 
 \section{Biological predictions and discriminating tests}
-The combined record suggests testable, mutually distinguishing predictions.
+The computational alternatives make several separable predictions.
 \begin{enumerate}
-\item \textbf{Eligibility--outcome interaction.} A local-credit account predicts that spontaneous or imposed cell-specific pre-outcome deviations leave a trace whose interaction with later scalar outcome predicts signed plasticity. Decorrelating trace and reinforcement timing should reduce learning without necessarily removing scalar reward responses.
-\item \textbf{Within-cell remapping.} If category/source feedback owns the pattern, changing context or hidden BCI contingencies should reorganize feedback before later somatic change and permit the same cell to reverse sign across contexts.
-\item \textbf{Center/surround measurement.} Simultaneous measurement and independent perturbation of excitatory feedback and NDNF-associated inhibitory surround should test whether a signed local membrane influence, rather than an excitatory calcium proxy alone, carries the predictive signal.
-\item \textbf{Projection- and phase-specific intervention.} Perturb a candidate feedback source selectively before outcome while preserving sensory error and reward. Loss of learning-dependent role information would support a causal source; a broad activity suppression would be less diagnostic.
+\item \textbf{Eligibility--outcome interaction.} Spontaneous or imposed cell-specific deviations before outcome should leave a local trace whose interaction with later scalar outcome predicts signed plasticity. Disrupting the trace--outcome interval should impair learning while preserving a scalar reward response.
+\item \textbf{Within-cell remapping.} If selected feedback owns the expressed pattern, a context or contingency change should reorganize feedback before later somatic change and should permit the same cell to reverse sign across contexts.
+\item \textbf{Center/surround measurement.} Simultaneous measurement and independent perturbation of excitatory feedback and NDNF-associated inhibitory surround should test whether a signed membrane influence, rather than an excitatory calcium proxy alone, carries the predictive signal.
+\item \textbf{Projection- and phase-specific intervention.} Perturbing a candidate feedback source before outcome while preserving sensory error and reward should reveal whether that projection contributes cell-specific information. Broad activity suppression would be less diagnostic.
 \end{enumerate}
-These experiments can separate a routed-vector account, a representation-selection account, and an exploratory eligibility account more cleanly than further qualitative matching to a dendritic residual.
+Together these tests could distinguish a routed-vector account, selection of an available representation, and locally computed exploratory credit.
 
 \section{Conclusion}
-The repository supports a disciplined two-level conclusion. pART/ART/SMART-inspired mechanisms can plausibly provide delayed representation credit, learned expectations, local match-dependent plasticity, and structured feedback. In the tested compositions they did not establish the missing arbitrary neuron-wise credit operation or the frozen Francioni-like longitudinal residual signature. A generic three-factor rule did solve that operation using only a global scalar advantage and cell-local eligibility. This establishes computational sufficiency under explicit new assumptions, not a biological mechanism or a source-derived Grossberg explanation. The next decisive work is to measure the proposed local eligibility and feedback bridges directly, with preregistered observation models and causal perturbations.
+The experiments show that scalar outcome can solve delayed representation credit without supplying a neuron-indexed teaching vector. In the tested pART-inspired compositions, however, cell-specific topology was chiefly inherited from available population patterns, and the preregistered dendrite-to-synapse-to-soma signature was not established. A generic three-factor rule learned arbitrary topology by combining the scalar outcome with cell-local exploratory eligibility. The distinction is the central result: scalar reward can choose among representations, but arbitrary cellular credit requires an additional cell-varying quantity. Determining whether dendrites carry that quantity, receive an explicit vector, or express matched feedback remains an empirical problem.
 
 \section*{Data and code availability}
-All computational results reported here derive from the archived protocols, frozen analyses, and held-out experiment records accompanying this study. Post-hoc analyses are explicitly identified and do not alter the original frozen classifications. Claims derived from the computational experiments are distinguished from interpretations based on outside literature. No new simulation results were generated specifically for this manuscript. The public \href{https://github.com/OgnjenX/part-vector-credit}{project repository} provides the corresponding source, experiment records, and analysis materials.
+All computational results reported here derive from archived protocols, frozen analyses, held-out experiment records, and explicitly labeled post-hoc audits accompanying this study. No new simulation results were generated specifically for the manuscript. The public \href{https://github.com/OgnjenX/part-vector-credit}{project repository} provides the source code, experimental records, analysis outputs, and figure files used here.
 
 \bibliographystyle{plainnat}
-\bibliography{part_vector_credit_manuscript}
+{\small\bibliography{part_vector_credit_manuscript}}
 \end{document}

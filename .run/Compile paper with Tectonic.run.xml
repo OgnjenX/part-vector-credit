@@ -1,0 +1,21 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Compile paper with Tectonic" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory">
+    <option name="mainFilePath" value="paper/part_vector_credit_manuscript.tex" />
+    <option name="outputPath" value="{mainFileParent}" />
+    <selectedOptions>
+      <option name="workingDirectory" />
+    </selectedOptions>
+    <steps>
+      <latexCompile id="64a3d038-cd5e-4f85-bbdc-9fa6883d08d2">
+        <option name="compiler" value="Tectonic" />
+        <option name="compilerPath" value="/opt/homebrew/bin/tectonic" />
+      </latexCompile>
+      <pdfViewer id="0e92468e-f6c5-4bee-9797-1f19313831b3">
+        <selectedOptions>
+          <option name="viewer.requireFocus" />
+        </selectedOptions>
+      </pdfViewer>
+    </steps>
+    <method v="2" />
+  </configuration>
+</component>
