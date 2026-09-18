@@ -67,6 +67,11 @@ qualitative sign opposition without supplying neuron-wise errors.
   [primary-source audit](experiments/exp005/PRIMARY_SOURCE_AUDIT.md) found no complete candidate,
   so no Grossberg-primary run was manufactured. A separately labeled generic node-perturbation
   diagnostic tests the missing cellular-credit operation under a frozen protocol.
+- [EXP006](experiments/exp006/CONFIRMATORY_RESULTS.md) compares ART-style selection, local
+  eligibility, their direct combination, and a privileged vector oracle in one Francioni-matched
+  benchmark. The ordinary mechanisms solved different parts of the task, but only the oracle
+  passed every frozen behavioral, topology, and dendritic criterion. The
+  [data note](results/exp006/README.md) explains how to recreate and verify the large raw arrays.
 
 ## Main finding
 
@@ -231,6 +236,13 @@ be rerun.
 uv run part-credit-exp005 development --output results/exp005/development_v8_final
 uv run part-credit-exp005 confirmatory --output results/exp005/frozen_generic_v1
 ```
+
+## Reproduce EXP006
+
+EXP006's large raw arrays are kept outside Git. The frozen summaries,
+classifications, figures, and checksum manifests remain in the repository. See
+the [EXP006 data note](results/exp006/README.md) for the exact reproduction and
+verification commands.
 
 EXP000 outputs are written to `results/initial_experiment.json` and `.png`. EXP001
 development and confirmation are under `results/exp001/frozen_v1/`. The fixed
