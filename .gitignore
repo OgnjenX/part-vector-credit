@@ -10,6 +10,11 @@ results/exp005/development_*/SHA256SUMS.json
 results/exp006/development_*/raw/
 results/exp006/development_*/SHA256SUMS.json
 
+# Large frozen EXP006 arrays are archived outside Git. Keep the summaries,
+# classifications, figures, and checksum manifests in the repository.
+results/exp006/frozen_v1_primary/raw/
+results/exp006/frozen_v1_secondary_n8/raw/
+
 # LaTeX intermediates (the manuscript PDF itself is intentionally tracked).
 paper/*.aux
 paper/*.bbl

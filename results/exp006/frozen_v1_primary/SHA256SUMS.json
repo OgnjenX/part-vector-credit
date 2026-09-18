@@ -1,0 +1,13 @@
+{
+  "raw/art_eligibility_hybrid.npz": "24bf8e09ac8a796d6b6efd751447e7321d8a395190b60dd4204c09922d6d1148",
+  "raw/art_outcome_shuffled.npz": "1497344b24c14a1c4c063d92fe6c4cbd56e2d8e4ad8d775d2bbc2365acbe384f",
+  "raw/art_repertoire.npz": "40d15748895ba898bb85640d0c17b4ddf01e3b4cff294fa102775f21e4dc8517",
+  "raw/eligibility_exploration_removed.npz": "512626cc3a0ae144b3b41ec2b0ab2a9ae1890710c862b2e5a6491ccb6d0132b0",
+  "raw/eligibility_outcome_shuffled.npz": "b9dae8dbbf4158afcb3f0f012146b872ac2fd05ce7ad4e4b199198bf0fddc244",
+  "raw/eligibility_trace_removed.npz": "622f0ad311bcd8c91a67bd8befc2068386a24cabaf34dfc9e07328f25dccf440",
+  "raw/hybrid_no_eligibility.npz": "35ecb3765d1d77d3860972720fac68d9b4c1a0d7f7807367ccca89695220da69",
+  "raw/local_eligibility.npz": "985de319340da99df3b0eab8f6a8603ffc86b5dbf1ef5030badebe25ca0b9bc7",
+  "raw/random_no_learning.npz": "cc3f69df2bba57a0b0805af68c1bad8ff5e20787ea86ea593c7ba75061f69061",
+  "raw/vector_oracle.npz": "32b0c8b67bcaddeb19130d4dff78af61e735ba1f58402cf23947f5b827abc4a7",
+  "summary.json": "ebd9cd3bd42c8bff15ee60c30b452b131428c150e487d83035015f59407b1f91"
+}
