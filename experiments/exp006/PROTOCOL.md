@@ -163,3 +163,13 @@ the Francioni-like endpoints.
 
 No outcome is allowed to support a claim about all ART models or the biological
 origin of the measured dendritic signal.
+
+## Pre-confirmation analysis amendment: matching identifiability
+
+Development showed that exact soma matching can be undefined when role groups have
+no common somatic support. This occurs in the vector oracle because its activity is
+deliberately separated by hidden role. An empty match is not assigned a score of
+zero. The score is reported as unidentified, together with the matched-sample
+count. Preservation after matching is classified only when both phases contain a
+mean of at least 100 matched samples per seed. This rule was added before any
+confirmatory seed was accessed.

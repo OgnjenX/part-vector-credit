@@ -194,8 +194,12 @@ class ARTCore:
 
     def _assigned_modulator(self, value: float) -> float:
         actual = float(value)
-        if self.condition.shuffle_modulators and self.modulator_pool:
-            assigned = float(self.rng.choice(self.modulator_pool))
+        if self.condition.shuffle_modulators:
+            if self.modulator_pool:
+                index = int(self.rng.integers(len(self.modulator_pool)))
+                assigned = float(self.modulator_pool[index])
+            else:
+                assigned = 0.0
         else:
             assigned = actual
         self.modulator_pool.append(actual)
@@ -290,8 +294,12 @@ class EligibilityMechanism:
 
     def _assigned_modulator(self, value: float) -> float:
         actual = float(value)
-        if self.condition.shuffle_modulators and self.modulator_pool:
-            assigned = float(self.rng.choice(self.modulator_pool))
+        if self.condition.shuffle_modulators:
+            if self.modulator_pool:
+                index = int(self.rng.integers(len(self.modulator_pool)))
+                assigned = float(self.modulator_pool[index])
+            else:
+                assigned = 0.0
         else:
             assigned = actual
         self.modulator_pool.append(actual)
@@ -354,10 +362,20 @@ class ARTRepertoireLearner:
         return self.art.select(observation, progress)
 
     def observe_transition(self, action: Action, visible_score: float) -> np.ndarray:
-        return self.art.learn_transition(action, visible_score)
+        feedback = self.art.learn_transition(action, visible_score)
+        action.metadata["feedback_art"] = feedback.copy()
+        action.metadata["feedback_eligibility"] = np.zeros_like(feedback)
+        action.metadata["feedback_vector"] = np.zeros_like(feedback)
+        return feedback
 
     def end_trial(self, reward: float) -> np.ndarray:
-        return self.art.end_trial(reward)
+        feedback = self.art.end_trial(reward)
+        self.last_post_components = {
+            "art": feedback.copy(),
+            "eligibility": np.zeros_like(feedback),
+            "vector": np.zeros_like(feedback),
+        }
+        return feedback
 
     def representative_action(self, observation: np.ndarray) -> np.ndarray:
         return self.art.representative_action(observation)
@@ -383,11 +401,20 @@ class LocalEligibilityLearner:
         return Action(soma, deterministic, perturbation, np.zeros_like(soma))
 
     def observe_transition(self, action: Action, visible_score: float) -> np.ndarray:
-        del action
-        return self.mechanism.observe_visible(visible_score)
+        feedback = self.mechanism.observe_visible(visible_score)
+        action.metadata["feedback_art"] = np.zeros_like(feedback)
+        action.metadata["feedback_eligibility"] = feedback.copy()
+        action.metadata["feedback_vector"] = np.zeros_like(feedback)
+        return feedback
 
     def end_trial(self, reward: float) -> np.ndarray:
-        return self.mechanism.end_trial(reward)
+        feedback = self.mechanism.end_trial(reward)
+        self.last_post_components = {
+            "art": np.zeros_like(feedback),
+            "eligibility": feedback.copy(),
+            "vector": np.zeros_like(feedback),
+        }
+        return feedback
 
     def representative_action(self, observation: np.ndarray) -> np.ndarray:
         del observation
@@ -419,21 +446,30 @@ class HybridLearner:
         selected.soma = soma
         selected.deterministic = deterministic
         selected.perturbation = perturbation
-        selected.prior_feedback = self.cfg.hybrid_art_gain * selected.prior_feedback
         return selected
 
     def observe_transition(self, action: Action, visible_score: float) -> np.ndarray:
         art_feedback = self.art.learn_transition(action, visible_score)
         eligibility_feedback = self.mechanism.observe_visible(visible_score)
+        action.metadata["feedback_art"] = art_feedback.copy()
+        action.metadata["feedback_eligibility"] = eligibility_feedback.copy()
+        action.metadata["feedback_vector"] = np.zeros_like(art_feedback)
         return (
             self.cfg.hybrid_art_gain * art_feedback
             + self.cfg.hybrid_eligibility_gain * eligibility_feedback
         )
 
     def end_trial(self, reward: float) -> np.ndarray:
+        art_feedback = self.art.end_trial(reward)
+        eligibility_feedback = self.mechanism.end_trial(reward)
+        self.last_post_components = {
+            "art": art_feedback.copy(),
+            "eligibility": eligibility_feedback.copy(),
+            "vector": np.zeros_like(art_feedback),
+        }
         return (
-            self.cfg.hybrid_art_gain * self.art.end_trial(reward)
-            + self.cfg.hybrid_eligibility_gain * self.mechanism.end_trial(reward)
+            self.cfg.hybrid_art_gain * art_feedback
+            + self.cfg.hybrid_eligibility_gain * eligibility_feedback
         )
 
     def representative_action(self, observation: np.ndarray) -> np.ndarray:
@@ -473,16 +509,23 @@ class VectorOracle:
         return Action(soma, deterministic, self.last_perturbation, self.role.copy())
 
     def observe_transition(self, action: Action, visible_score: float) -> np.ndarray:
-        del action
-        self.weights += self.cfg.oracle_lr * (self.role - self.weights)
-        self.weights = np.clip(self.weights, -1.0, 1.0)
         direction = float(np.sign(visible_score))
-        return direction * self.role
+        feedback = direction * self.role
+        action.metadata["feedback_art"] = np.zeros_like(feedback)
+        action.metadata["feedback_eligibility"] = np.zeros_like(feedback)
+        action.metadata["feedback_vector"] = feedback.copy()
+        return feedback
 
     def end_trial(self, reward: float) -> np.ndarray:
-        self.weights += self.cfg.oracle_lr * reward * (self.role - self.weights)
+        self.weights += self.cfg.oracle_lr * (self.role - self.weights)
         self.weights = np.clip(self.weights, -1.0, 1.0)
-        return reward * self.role
+        feedback = (2.0 * reward - 1.0) * self.role
+        self.last_post_components = {
+            "art": np.zeros_like(feedback),
+            "eligibility": np.zeros_like(feedback),
+            "vector": feedback.copy(),
+        }
+        return feedback
 
     def representative_action(self, observation: np.ndarray) -> np.ndarray:
         del observation
@@ -503,11 +546,21 @@ class RandomNoLearning:
 
     def observe_transition(self, action: Action, visible_score: float) -> np.ndarray:
         del visible_score
-        return np.zeros_like(action.soma)
+        feedback = np.zeros_like(action.soma)
+        action.metadata["feedback_art"] = feedback.copy()
+        action.metadata["feedback_eligibility"] = feedback.copy()
+        action.metadata["feedback_vector"] = feedback.copy()
+        return feedback
 
     def end_trial(self, reward: float) -> np.ndarray:
         del reward
-        return np.zeros_like(self.motor)
+        feedback = np.zeros_like(self.motor)
+        self.last_post_components = {
+            "art": feedback.copy(),
+            "eligibility": feedback.copy(),
+            "vector": feedback.copy(),
+        }
+        return feedback
 
     def representative_action(self, observation: np.ndarray) -> np.ndarray:
         del observation

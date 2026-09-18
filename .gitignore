@@ -7,6 +7,8 @@ __pycache__/
 .idea/
 results/exp005/development_*/raw/
 results/exp005/development_*/SHA256SUMS.json
+results/exp006/development_*/raw/
+results/exp006/development_*/SHA256SUMS.json
 
 # LaTeX intermediates (the manuscript PDF itself is intentionally tracked).
 paper/*.aux

@@ -104,7 +104,12 @@ def test_small_vector_run_learns_both_mappings_deterministically() -> None:
     scenario = Scenario("vector", "vector", Condition("vector"))
     first_metrics, first_raw = run_seed(11, scenario, cfg)
     second_metrics, second_raw = run_seed(11, scenario, cfg)
-    assert first_metrics == second_metrics
+    for key, first in first_metrics.items():
+        second = second_metrics[key]
+        if isinstance(first, float) and np.isnan(first):
+            assert np.isnan(second)
+        else:
+            assert first == second
     assert first_metrics["pre_remap_alignment"] > 0.95
     assert first_metrics["post_remap_alignment"] > 0.95
     np.testing.assert_array_equal(first_raw["success"], second_raw["success"])
@@ -113,3 +118,46 @@ def test_small_vector_run_learns_both_mappings_deterministically() -> None:
 def test_scenario_names_are_unique() -> None:
     names = [scenario.name for scenario in scenario_suite()]
     assert len(names) == len(set(names))
+
+
+def test_hybrid_archives_unscaled_components_and_combines_each_once() -> None:
+    cfg = LearnerConfig(repertoire_size=32)
+    bank = random_balanced_repertoire(
+        np.random.default_rng(6),
+        n_neurons=10,
+        size=cfg.repertoire_size,
+        amplitude=cfg.motor_amplitude,
+    )
+    learner = HybridLearner(
+        bank,
+        cfg,
+        Condition("hybrid"),
+        np.random.default_rng(7),
+        np.random.default_rng(8),
+    )
+    learner.start_trial()
+    action = learner.act(np.asarray([0.0, 0.0, 0.5]), 0.0)
+    combined = learner.observe_transition(action, 1.0)
+    np.testing.assert_allclose(
+        combined,
+        cfg.hybrid_art_gain * action.metadata["feedback_art"]
+        + cfg.hybrid_eligibility_gain * action.metadata["feedback_eligibility"],
+    )
+
+
+def test_shuffled_modulator_uses_only_prior_history() -> None:
+    cfg = LearnerConfig(repertoire_size=32)
+    bank = random_balanced_repertoire(
+        np.random.default_rng(9),
+        n_neurons=10,
+        size=cfg.repertoire_size,
+        amplitude=cfg.motor_amplitude,
+    )
+    learner = ARTRepertoireLearner(
+        bank,
+        cfg,
+        Condition("shuffled", shuffle_modulators=True),
+        np.random.default_rng(10),
+    )
+    assert learner.art._assigned_modulator(3.0) == 0.0
+    assert learner.art._assigned_modulator(-4.0) == 3.0

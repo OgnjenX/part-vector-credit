@@ -14,7 +14,7 @@ class ObservationConfig:
     noise_sd: float = 0.035
 
 
-def _feedback_standardization(
+def standardize_feedback(
     feedback: np.ndarray, mask: np.ndarray
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     standardized = np.full_like(feedback, np.nan, dtype=float)
@@ -37,7 +37,7 @@ def simulate_residuals(
     rng: np.random.Generator,
 ) -> dict[str, np.ndarray]:
     """Apply one observation model and fit one soma--dendrite line per cell."""
-    standardized, feedback_mean, feedback_scale = _feedback_standardization(
+    standardized, feedback_mean, feedback_scale = standardize_feedback(
         feedback, valid_mask
     )
     dendrite = np.full_like(soma, np.nan, dtype=float)
@@ -123,4 +123,3 @@ def cross_validated_linear_decode(
         test_design = np.column_stack([np.ones(np.sum(test)), x[test]])
         predictions[test] = (test_design @ coefficient >= 0.5).astype(int)
     return balanced_accuracy(y, predictions)
-

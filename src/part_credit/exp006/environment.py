@@ -12,7 +12,7 @@ class FrancioniTaskConfig:
     n_neurons: int = 10
     max_frames: int = 28
     visual_bins: int = 7
-    state_gain: float = 0.12
+    state_gain: float = 0.18
     target_state: float = 1.0
     reward_delay_frames: int = 1
 
@@ -112,4 +112,3 @@ class FrancioniBCI:
             "success": float(self.displayed_state >= self.cfg.target_state),
             "observation": self.observation(),
         }
-
