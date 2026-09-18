@@ -1,0 +1,159 @@
+{
+  "status": "FROZEN_BEFORE_CONFIRMATION",
+  "frozen_date": "2026-09-18",
+  "development_commit": "958d10639f49dcdedd3572f4ac2ec067ca75c65a",
+  "heldout_accessed_at_freeze": false,
+  "primary_models": [
+    "vector_oracle",
+    "art_repertoire",
+    "local_eligibility",
+    "art_eligibility_hybrid",
+    "random_no_learning"
+  ],
+  "scenario_order": [
+    "vector_oracle",
+    "art_repertoire",
+    "local_eligibility",
+    "art_eligibility_hybrid",
+    "random_no_learning",
+    "art_outcome_shuffled",
+    "eligibility_outcome_shuffled",
+    "eligibility_exploration_removed",
+    "eligibility_trace_removed",
+    "hybrid_no_eligibility"
+  ],
+  "config": {
+    "development_seeds": [601, 602, 603, 604, 605, 606, 607, 608],
+    "confirmatory_seeds": [
+      12000, 12001, 12002, 12003, 12004, 12005, 12006, 12007,
+      12008, 12009, 12010, 12011, 12012, 12013, 12014, 12015,
+      12016, 12017, 12018, 12019, 12020, 12021, 12022, 12023,
+      12024, 12025, 12026, 12027, 12028, 12029, 12030, 12031
+    ],
+    "trials_per_block": 64,
+    "acquisition_blocks": 14,
+    "remap_blocks": 14,
+    "task": {
+      "n_neurons": 10,
+      "max_frames": 28,
+      "visual_bins": 7,
+      "state_gain": 0.18,
+      "target_state": 1.0,
+      "reward_delay_frames": 1
+    },
+    "learner": {
+      "motor_amplitude": 0.2,
+      "repertoire_size": 64,
+      "max_categories": 96,
+      "vigilance": 0.84,
+      "choice_alpha": 0.01,
+      "category_lr": 0.12,
+      "value_lr": 0.18,
+      "outstar_lr": 0.1,
+      "reward_trace_decay": 0.92,
+      "exploration_start": 0.55,
+      "exploration_end": 0.04,
+      "perturbation_sd": 0.08,
+      "eligibility_decay": 0.88,
+      "visual_learning_rate": 0.0012,
+      "reward_learning_rate": 0.0008,
+      "correction_bound": 0.28,
+      "baseline_rate": 0.03,
+      "oracle_lr": 0.08,
+      "oracle_exploration_sd": 0.025,
+      "hybrid_art_gain": 0.55,
+      "hybrid_eligibility_gain": 1.0
+    },
+    "observation": {
+      "soma_gain": 0.82,
+      "feedback_gain": 0.16,
+      "noise_sd": 0.035
+    }
+  },
+  "pass_floors": {
+    "behavior": {
+      "acquisition_late_success": 0.6,
+      "remap_late_success": 0.6
+    },
+    "topology": {
+      "pre_remap_alignment": 0.55,
+      "post_remap_alignment": 0.55,
+      "pre_correct_sign_fraction": 0.75,
+      "post_correct_sign_fraction": 0.75,
+      "changed_cell_sign_reversal": 0.7
+    },
+    "francioni_signature": {
+      "residual_vectorization_acquisition": 0.01,
+      "residual_vectorization_remap": 0.01,
+      "latent_vectorization_acquisition": 0.1,
+      "latent_vectorization_remap": 0.1,
+      "pre_outcome_decode_balanced_accuracy": 0.58,
+      "post_outcome_decode_balanced_accuracy": 0.58,
+      "prospective_activity_prediction_acquisition": 0.2,
+      "prospective_activity_prediction_remap": 0.2
+    },
+    "matched_soma": {
+      "minimum_samples": 100,
+      "minimum_score": 0.005
+    }
+  },
+  "control_comparisons": {
+    "art_outcome_dependence": {
+      "primary": "art_repertoire",
+      "control": "art_outcome_shuffled",
+      "minimum_effects": {
+        "acquisition_late_success": 0.4,
+        "remap_late_success": 0.4,
+        "pre_remap_alignment": 0.3,
+        "post_remap_alignment": 0.3
+      }
+    },
+    "eligibility_outcome_dependence": {
+      "primary": "local_eligibility",
+      "control": "eligibility_outcome_shuffled",
+      "minimum_effects": {
+        "acquisition_late_success": 0.3,
+        "remap_late_success": 0.3,
+        "pre_remap_alignment": 0.5,
+        "post_remap_alignment": 0.2
+      }
+    },
+    "eligibility_exploration_requirement": {
+      "primary": "local_eligibility",
+      "control": "eligibility_exploration_removed",
+      "minimum_effects": {
+        "acquisition_late_success": 0.6,
+        "remap_late_success": 0.3,
+        "pre_remap_alignment": 0.5,
+        "post_remap_alignment": 0.2
+      }
+    },
+    "eligibility_trace_requirement": {
+      "primary": "local_eligibility",
+      "control": "eligibility_trace_removed",
+      "minimum_effects": {
+        "acquisition_late_success": 0.6,
+        "remap_late_success": 0.3,
+        "pre_remap_alignment": 0.5,
+        "post_remap_alignment": 0.2
+      }
+    },
+    "hybrid_eligibility_acquisition_contribution": {
+      "primary": "art_eligibility_hybrid",
+      "control": "hybrid_no_eligibility",
+      "minimum_effects": {
+        "acquisition_late_success": 0.15,
+        "pre_remap_alignment": 0.15
+      }
+    }
+  },
+  "source_sha256": {
+    "pyproject.toml": "14c99fad34942d3d0e3b3874c71dbbc7b8113b4839d3fdfbf909ace4a44366d5",
+    "src/part_credit/exp006/environment.py": "8d6577c8bd35e1ffb145562b05583fbd85042c868566e8618a87e2feffd34dd4",
+    "src/part_credit/exp006/model.py": "ec6a423c311143549325098c02d35f9c35111dc019d328b3cf700f4172cec3d6",
+    "src/part_credit/exp006/observation.py": "84e9813f790cdfa4cc0bb9f83484af80a28eb55bc2d0f06fc5d26a62d5a31b33",
+    "src/part_credit/exp006/experiment.py": "96ba090404358c68d1b76a1329f9cc137e388d83508ee3f197773a73c5a14b42",
+    "src/part_credit/exp006/cli.py": "8025666bfb29f3dfa580b5ee4078a4af59104c0d81b4e0798d552c65bcf92239",
+    "src/part_credit/exp006/analysis.py": "063e88f5c0454a455b58f8dcef9188835c892d1bacd7be99772ea227abf2b66f"
+  }
+}
